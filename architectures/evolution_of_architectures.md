@@ -65,4 +65,5 @@ SOA架构也并非就是完美的，比如逻辑层和服务层之间的边界�
 2. Micro-Service Architecture, [https://archive.oredev.org/oredev2012/2012/sessions/micro-service-architecture.html](https://archive.oredev.org/oredev2012/2012/sessions/micro-service-architecture.html)
 3. Microservices: A Definition of this New Architectural Term, [https://martinfowler.com/articles/microservices.html](https://martinfowler.com/articles/microservices.html)
 4. 软件架构的演变, [https://zhuanlan.zhihu.com/p/98392801](https://zhuanlan.zhihu.com/p/98392801)
+5. Microservices, SOA, and API: Friends or Enemies, [https://developer.ibm.com/tutorials/1601\_clark-trs/](https://developer.ibm.com/tutorials/1601_clark-trs/)
 
