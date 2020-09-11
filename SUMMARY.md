@@ -13,55 +13,56 @@
 * [微服务框架一览](microservice_frameworks/widely_used_frameworks.md)
 * [自研微服务框架](microservice_frameworks/why_develop_another_one.md)
 
-## 微服务框架设计 <a id="cong-0-dao-1-zi-yan-wei-fu-wu-kuang-jia"></a>
+## 微服务框架设计 <a id="design_of_framework"></a>
 
-* [设计目标](cong-0-dao-1-zi-yan-wei-fu-wu-kuang-jia/she-ji-mu-biao.md)
-* [架构设计](cong-0-dao-1-zi-yan-wei-fu-wu-kuang-jia/jia-gou-she-ji.md)
-* [模块设计](cong-0-dao-1-zi-yan-wei-fu-wu-kuang-jia/mo-kuai-she-ji.md)
-* [打磨设计](cong-0-dao-1-zi-yan-wei-fu-wu-kuang-jia/da-mo-she-ji.md)
+* [设计目标](design_of_framework/goal_of_framework.md)
+* [架构设计](design_of_framework/arch_of_framework.md)
+* [模块设计](design_of_framework/design_of_modules.md)
+* [打磨设计](design_of_framework/polish_the_design.md)
 
-## 框架研发质量
+## 框架研发质量 <a id="quality_of_framework"></a>
 
-* [单元测试](kuang-jia-yan-fa-zhi-liang/dan-yuan-ce-shi.md)
-* [测试覆盖率](kuang-jia-yan-fa-zhi-liang/ce-shi-fu-gai-lv.md)
-* [压力测试](kuang-jia-yan-fa-zhi-liang/ya-li-ce-shi.md)
-* [流水线自动化](kuang-jia-yan-fa-zhi-liang/liu-shui-xian-zi-dong-hua.md)
+* [单元测试](quality_of_framework/unit_test.md)
+* [测试覆盖率](quality_of_framework/test_coverage.md)
+* [基准测试](quality_of_framework/benchmark.md)
+* [压力测试](quality_of_framework/ya-li-ce-shi.md)
+* [流水线自动化](quality_of_framework/automate_the_workflow.md)
 
-## 开源协同基础 <a id="kuang-jia-bian-ma-shi-xian"></a>
+## 开源协同基础 <a id="opensource_and_cooperation"></a>
 
-* [代码版本控制](kuang-jia-bian-ma-shi-xian/dai-ma-ban-ben-kong-zhi.md)
-* [开源协同方式](kuang-jia-bian-ma-shi-xian/kai-yuan-xie-tong-fang-shi.md)
-* [贡献方式](kuang-jia-bian-ma-shi-xian/gong-xian-fang-shi.md)
-* [确定里程碑 & 迭代](kuang-jia-bian-ma-shi-xian/que-ding-li-cheng-bei-die-dai.md)
-* [代码评审](kuang-jia-bian-ma-shi-xian/dai-ma-ping-shen.md)
+* [代码版本控制](opensource_and_cooperation/cvs.md)
+* [开源协同方式](opensource_and_cooperation/cooperation.md)
+* [贡献方式](opensource_and_cooperation/contribution.md)
+* [确定里程碑 & 迭代](opensource_and_cooperation/milestones.md)
+* [代码评审](opensource_and_cooperation/code_review.md)
 
-## 框架编码实现 <a id="kuang-jia-bian-ma-shi-xian-1"></a>
+## 框架编码实现 <a id="development_of_framework"></a>
 
-* [hello world](kuang-jia-bian-ma-shi-xian-1/hello-world.md)
-* [server](kuang-jia-bian-ma-shi-xian-1/server.md)
-* [client](kuang-jia-bian-ma-shi-xian-1/client.md)
-* [transport](kuang-jia-bian-ma-shi-xian-1/transport.md)
-* [codec](kuang-jia-bian-ma-shi-xian-1/codec.md)
-* [log](kuang-jia-bian-ma-shi-xian-1/log.md)
-* [config](kuang-jia-bian-ma-shi-xian-1/config.md)
-* [naming](kuang-jia-bian-ma-shi-xian-1/naming.md)
-* [pool](kuang-jia-bian-ma-shi-xian-1/pool.md)
-* [plugin](kuang-jia-bian-ma-shi-xian-1/plugin.md)
-* [filter](kuang-jia-bian-ma-shi-xian-1/filter.md)
-* [admin](kuang-jia-bian-ma-shi-xian-1/admin.md)
-* [metrics](kuang-jia-bian-ma-shi-xian-1/metrics.md)
+* [helloworld](development_of_framework/helloworld.md)
+* [server](development_of_framework/server.md)
+* [client](development_of_framework/client.md)
+* [transport](development_of_framework/transport.md)
+* [codec](development_of_framework/codec.md)
+* [log](development_of_framework/log.md)
+* [config](development_of_framework/config.md)
+* [naming](development_of_framework/naming.md)
+* [pool](development_of_framework/pool.md)
+* [plugin](development_of_framework/plugin.md)
+* [filter](development_of_framework/filter.md)
+* [admin](development_of_framework/admin.md)
+* [metrics](development_of_framework/metrics.md)
 
-## 框架持续打磨
+## 框架持续打磨 <a id="optimize_the_framework"></a>
 
-* [撰写高质量文档](kuang-jia-chi-xu-da-mo/zhuan-xie-gao-zhi-liang-wen-dang.md)
-* [打造活跃友好的社区](kuang-jia-chi-xu-da-mo/da-zao-huo-yue-you-hao-de-she-qu.md)
-* [项目管理最佳实践](kuang-jia-chi-xu-da-mo/xiang-mu-guan-li-zui-jia-shi-jian.md)
+* [撰写高质量文档](optimize_the_framework/documentation.md)
+* [打造活跃友好的社区](optimize_the_framework/community.md)
+* [项目管理最佳实践](optimize_the_framework/maintainer_best_practices.md)
 
 ---
 
-* [致谢](zhi-xie.md)
+* [致谢](thanks.md)
 
-## 附录
+## 附录 <a id="appendix"></a>
 
-* [参考文献](fu-lu/can-kao-wen-xian.md)
+* [参考文献](appendix/references.md)
 
