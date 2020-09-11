@@ -10,7 +10,7 @@
 
 单体架构，指的是在一个应用程序中打包业务场景涉及到的所有功能。如将一个电商系统完整打包在一个WAR包，然后在Web容器中运行。
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%287%29.png)
 
 当软件规模不是很大的时候，单体架构是比较合适的，开发、测试、部署、监控等相对来说也是比较方便的。但是随着软件规模的扩大，变得比较或者很复杂，情况就会发生改变。
 
@@ -49,11 +49,20 @@ SOA架构也并非就是完美的，比如逻辑层和服务层之间的边界�
 
 ## 微服务架构
 
+微服务架构中对公共功能进行提炼，提炼成一些更细粒度的服务，并以接口的形式对外提供服务。这里的更细粒度的服务，即微服务。
 
+![&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;](../.gitbook/assets/image%20%286%29.png)
+
+从微服务的概念上，读者朋友可能会觉得它和SOA有点接近。其实微服务架构和SOA还是有区别的。SOA侧重于系统的集成，过了这么多年，SOA本身也在演进，比如服务公开的手段也从以前的SOAP等Web Service技术演进为API等。
+
+微服务架构的核心思想就是按照服务功能进行最小粒度拆分，以尽可能做到服务功能的高内聚、低耦合，也方便后续实现更高程度的复用，也方便进行更细力度地伸缩。当然了不同的微服务可以由不同的团队负责，开发人员也进一步可以拥有选择更合适的技术栈开发相应微服务的自由（如果有必要）。各个微服务都可以快速迭代、测试、上线，也有助于提高研发效率。
+
+微服务并不是说按照功能把服务粒度拆的更细之后就结束了，我们还面临着一系列运维上的挑战。相比单体应用，微服务架构的服务数量多了很多，如何合理有效地管理、监控这么多微服务，是一项巨大的挑战，包括对于分布式事务的处理。幸运的是，业界已经积累了很多这方面的研究，如名字服务、分布式日志、分布式跟踪等等，我们也将在后续"_框架编码实现"_章节中进一步展开。
 
 ## 参考文献
 
 1. Micro Services - Java the Unix Way, [http://2012.33degree.org/pdf/JamesLewisMicroServices.pdf](http://2012.33degree.org/pdf/JamesLewisMicroServices.pdf)
 2. Micro-Service Architecture, [https://archive.oredev.org/oredev2012/2012/sessions/micro-service-architecture.html](https://archive.oredev.org/oredev2012/2012/sessions/micro-service-architecture.html)
 3. Microservices: A Definition of this New Architectural Term, [https://martinfowler.com/articles/microservices.html](https://martinfowler.com/articles/microservices.html)
+4. 软件架构的演变, [https://zhuanlan.zhihu.com/p/98392801](https://zhuanlan.zhihu.com/p/98392801)
 
