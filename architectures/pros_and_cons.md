@@ -95,4 +95,5 @@ _物理学中对一个物体或系统进行受力分析，为了判断出合力�
 1. What are microservices, [https://microservices.io/](https://microservices.io/)
 2. The pattern language is your guide, [https://microservices.io/](https://microservices.io/)
 3. F.Buschmann, R.Meunier, H.Rohnert, Pattern-Oriented Software Architecture
-4. 
+4. Forces on Architecture decisions, [http://web.mit.edu/richh/www/writings/forces-wicsa-2012.pdf](http://web.mit.edu/richh/www/writings/forces-wicsa-2012.pdf)
+5. 
