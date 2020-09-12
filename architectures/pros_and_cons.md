@@ -115,9 +115,70 @@ _物理学中对一个物体或系统进行受力分析，为了判断出合力�
 
 ## 微服务的挑战
 
+当然了，微服务架构也存在一些问题，或者说，要正确地应用、落地微服务架构，我们还面临一些挑战。
 
+### 引入额外复杂性
 
+* 开发人员要额外处理构建一个分布式系统的复杂性的问题
+  * 必须实现服务之间的通信机制，并且要能够处理部分失败问题；
+  * 实现跨多个服务的请求处理，相比单体架构更困难；
+  * 测试跨多个服务的请求处理，相比单体架构更困难；
+  * 实现跨多个服务的请求处理，需要协调由不同团队负责的多个服务的逻辑（沟通、联调）；
+  * 开发工具、IDE都是面向单体架构应用开发的，不是面向分布式服务开发的；
+* 部署比较复杂
 
+  在生产环境中，部署和管理很多个服务构筑而成的系统，运维复杂性会比单体架构应用高很多。
+
+* 增加了内存占用
+
+  各个微服务假如独立部署，相对来说会占用更多的资源，如CPU、内存、机器等。比如一个微服务都是一个独立的JVM实例来隔离进程，那原来单体应用假如只有一个进程，现在光这几个核心服务就要多好几个JVM实例，内存占用会比原来多些。如果一个JVM实例一台机器，占用机器数会更多；如果部署在同一台机器上，内存占用的情况会更加糟糕。需要对不同微服务的资源分配进行更细力度的控制，不然微服务数量成百上千之后对计算成本是种比较大的浪费。
+
+### 确定何时用微服务
+
+使用微服务架构的一个挑战是，决定何时应该采用微服务架构。对于一些初创企业或者应用程序的第一个版本，通常关注的是如何快速迭代以实现功能逻辑，也不会碰到微服务架构要解决的那些问题。如果开始之初就采用按照功能垂直分割，更甚至采用微服务架构的话，这些精心设计的分布式系统、服务之间的交互逻辑、分布式事务一致性的处理、分布式服务的部署运维等等，反而会影响到迭代的效率。
+
+但是过一段时间之后，当系统面临的挑战变成如何实现伸缩性、团队独立协同开发、快速持续集成、持续交付等等，这个时候就需要考虑分解，但是单体架构程序中盘根错节的依赖关系，可能将其再拆分为一系列微服务的时候还是比较困难。
+
+所以，这里项目管理人员、架构师、开发人员，还是要结合团队现状来综合考虑，如果团队在微服务架构设计、开发、部署、运营等方面都很有经验，迭代开发时间足够的话，直接使用微服务也不见得是坏事。
+
+### 如何分解微服务
+
+另一个挑战点，就是如何将应用合理分解为多个微服务，这里就是架构设计相关的一门艺术了。
+
+不过，有一些策略可以指导我们如何分解：
+
+* 通过业务功能来进行分解，然后按照功能来定义服务；
+* 通过领域驱动设计的子领域来进行分解；
+* 通过动词或者用例来进行分解，将服务定义成某类特定的操作，如ShippingService负责物流操作；
+* 通过名词或者资源来进行分解，将服务定义成对某类资源的所有操作的集合，如AccountService是对账户信息的管理，包括增删改查；
+
+理想情况下，每个微服务都应该只负责某一种职责，也就是Bob Martin提及的单一职责原则（SRP，Single Responsibility Principle）。SRP将一个类的职责定义为改变它的状态的原因，并且这个类的状态的改变只受一个原因的影响。也可以将SRP用到服务分解的过程中。
+
+也可以参考Unix系统下工具的设计，Unix提供了很多的工具比如grep、cat、find，每一个工具都只干一件事情，但是却可以通过shell脚本、管道等组合起来灵活实现更强大的功能。
+
+### 维护数据一致性
+
+为了实现微服务之间的松耦合，每个微服务都有自己的数据库，维护不同服务之间的数据一致性就变成了一个比较大的挑战。为什么这么说呢？因为两阶段提交、分布式事务，对很多的应用程序而言并不是一个有效选项。
+
+应用程序必须使用 [Saga Pattern](https://microservices.io/patterns/data/saga.html)。一个服务的数据变更之后它需要生成一个事件，其他服务来消费这个事件并且更新自己的数据。
+
+有多种方式来实现数据的可靠更新、事件发布，比如：[Event Sourcing](https://microservices.io/patterns/data/event-sourcing.html)、[Transaction Log Tailing](https://microservices.io/patterns/data/transaction-log-tailing.html)。
+
+### 实现数据的查询
+
+单体架构中可能几个DB表join一下就完成了，但是现在每个微服务都有独立的数据库，数据查询需要经过DB对应的微服务提供的接口进行查询，然后再完成数据组合，实现会更复杂一点。
+
+微服务架构中，通常通过 [API Composition](https://microservices.io/patterns/data/api-composition.html) 或者 [CQRS \(Command Query Responsibility Segregation\)](https://microservices.io/patterns/data/cqrs.html) 来实现。
+
+### 微服务架构模式
+
+微服务架构下还面临其他的一些问题，如何保证功能符合预期、保证数据一致性、保证系统性能、如何提高运维质量、运维效率等，对开发人员的要求还是比较高的。
+
+这里就建议多参考些已经经过实践检验的微服务架构下的常见设计模式。
+
+![&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;](../.gitbook/assets/image%20%2816%29.png)
+
+据我了解，在很多年前前国内很多大厂就意识到了“微”服务架构的价值，并进行了探索，那个时候很多微服务相关的中间件、平台还不够成熟，但也已经进行了很多的实践。今天微服务架构大行其道，微服务场景下依赖的服务治理、日志监控、容器及容器编排技术等都日趋完备，微服务架构会越来越受欢迎。
 
 ## 参考文献
 
@@ -125,4 +186,8 @@ _物理学中对一个物体或系统进行受力分析，为了判断出合力�
 2. The pattern language is your guide, [https://microservices.io/](https://microservices.io/)
 3. F.Buschmann, R.Meunier, H.Rohnert, Pattern-Oriented Software Architecture
 4. Forces on Architecture decisions, [http://web.mit.edu/richh/www/writings/forces-wicsa-2012.pdf](http://web.mit.edu/richh/www/writings/forces-wicsa-2012.pdf)
-5. 
+5. Domain-Driven Design, [https://en.wikipedia.org/wiki/Domain-driven\_design](https://en.wikipedia.org/wiki/Domain-driven_design)
+6. Pattern: Microservice Architecture, [https://microservices.io/patterns/microservices.html](https://microservices.io/patterns/microservices.html)
+
+
+
