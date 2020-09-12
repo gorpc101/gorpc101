@@ -1,3 +1,8 @@
+---
+description: >-
+  首先一起回顾下软件服务架构的演变过程，了解下不同的发展阶段所面临的一些具体的问题场景，以及前辈们所提出的用以化解这些问题的软件服务架构。回头看软件服务架构的演变过程，也不禁感叹正是互联网行业的迅速发展才引入了这么多的挑战，庆幸的是不同阶段总会诞生一批优秀的“思想家”来点亮夜路。
+---
+
 # 软件服务架构演变
 
 ## 简介
@@ -65,4 +70,5 @@ SOA架构也并非就是完美的，比如逻辑层和服务层之间的边界�
 2. Micro-Service Architecture, [https://archive.oredev.org/oredev2012/2012/sessions/micro-service-architecture.html](https://archive.oredev.org/oredev2012/2012/sessions/micro-service-architecture.html)
 3. Microservices: A Definition of this New Architectural Term, [https://martinfowler.com/articles/microservices.html](https://martinfowler.com/articles/microservices.html)
 4. 软件架构的演变, [https://zhuanlan.zhihu.com/p/98392801](https://zhuanlan.zhihu.com/p/98392801)
+5. Microservices, SOA, and API: Friends or Enemies, [https://developer.ibm.com/tutorials/1601\_clark-trs/](https://developer.ibm.com/tutorials/1601_clark-trs/)
 
