@@ -34,6 +34,31 @@ Spring Boot本身对各层次进行了抽象设计，通过插件的方式来实
 
 ![Vert.X](../.gitbook/assets/image%20%2816%29.png)
 
+另一个流行的微服务服务框架Vert.X，它出自Eclipse基金金，该框架支持多种编程语言。因此，如果您的研发团队拥有Java、Kotlin、JavaScript技术栈的开发人员，那么此微服务框架应该是他们的理想选择，用Vert.X工具包构建运行在JVM上的响应式微服务。
+
+Eclipse Vert.X是事件驱动和非阻塞的，这意味着应用程序可以使用少量的内核线程来处理大量并发。Vert.X使应用程序可以使用最少的硬件进行扩展。
+
+Vert.X具有如下特点：
+
+* 轻量级：Vert.X核心代码只有650KB大小；
+* 高性能：这里有些框架性能的对比，[https://www.techempower.com/benchmarks/](https://www.techempower.com/benchmarks/)；
+* 模块化：按需使用Vert.X中的模块；
+* 简单但强大：允许简单方便地创建强大的应用程序；
+
+Vert.X是构建轻量级、高性能微服务的理想选择，并且它还支持多语言。Vert.X还海通了各种组件、库来简化构建微服务的工作，这里列几个常见的了解下。
+
+* 服务发现：该组件允许发布、查询、绑定任意类型的服务；
+* 熔断器：提供了一种熔断器模式的组件实现；
+* 配置：提供了一种可扩展的方式来配置应用程序；
+* 集群伸缩：提供开箱即用的集群、高可用方案，集群管理通过集群manager中实现的，默认是Hazelcast，也可使用Apache Zookeeper、Ignite等代替；
+* 可观测：健康检查组件提供了一种简单的方式来对外输出检查结果，表明服务状态up/down；
+* 测试：Vertx Unit吸取了JUnit、QUnit的的思想，并结合了Vertx中的实践，允许通过多语言API编写异步的单测用例并在JVM中运行；
+* 支持gRPC：Vertx gRPC模块支持Google gRPC；
+* 服务代理：允许有选择地暴露某个服务给其他服务访问；
+* DevOps：Vertx提供了一些组件来保证线上应用程序的正常运行，如Micrometer、Dropwizard等；
+
+和Spring Boot相比，Vertx的一大优势就是它支持多语言版本。
+
 ## Oracle Helidon Microservices framework
 
 ![Helidon](../.gitbook/assets/image%20%2825%29.png)
