@@ -165,6 +165,14 @@ Lagom还提供了一个集成开发环境，允许开发人员将关注点聚焦
 
 ![AxonIQ](../.gitbook/assets/image%20%2824%29.png)
 
+Axon提供了一种统一、高效的开发Java应用程序的方法，该Java应用程序可以在无需大量重构的情况下从单体式架构演进为事件驱动的微服务架构。
+
+Axon同时包含编程模型和专用的基础设施，这些配套的基础设施提供了企业级的运营支持，尤其是在扩展和分发关键业务应用程序时。 Axon框架提供了编程模型，而Axon Server是Axon的基础，全部开源。
+
+Axon Framework是一个Java微服务框架，可帮助您根据域驱动设计（DDD）原则构建微服务架构。除了DDD外，Axon Framework还允许您实现微服务模式，例如命令-查询-责任-隔离（CQRS）和事件驱动的架构。
+
+Axon能够满足最苛刻的企业要求，例如存储扩展、安全性、集群、负载平衡、服务发现、全球分布的数据中心、第三方集成、指标监控metrics和监视等等。
+
 ## Ballerina Microservices Language
 
 ![Ballerina](../.gitbook/assets/image%20%2821%29.png)
