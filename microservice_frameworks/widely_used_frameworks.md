@@ -2,6 +2,8 @@
 
 近些年来涌现出了非常多的微服务框架，其中也不乏国人主导或者深度参与开发的框架。框架之多，令人目不暇接，既看到了不同框架之间的微创新，偶尔也会有些选择困难症。结合团队技术栈及未来业务走向，提前规划、做出更合理的选择是有必要的。
 
+![](../.gitbook/assets/image%20%2815%29.png)
+
 ## 影响框架选型的因素
 
 笔者在腾讯工作期间，先后经历了众多的研发框架，C++的就有好几种：ServerBench Plus Plus（简称SPP）、MCP，Go的GoNeat、Going，Java的JavaNeat、Jungle，还有其他语言的。看似很多编程语言都有几种可选项，但是考虑到团队技术栈、业务场景，能达到可用标准的就真的不多了。而这些影响因素，也同样适用于对业界开源框架的选择。
@@ -24,5 +26,60 @@
 
 ## 业界流行微服务框架
 
+现在来看，微服务框架或者可以用来写微服务的组件包，真的是非常多，有很多甚至闻所未闻。我思考了下，一方面是因为技术栈的原因，作为一名后端工程师，我的技术栈主要是Go、CC++、Java，对其他语言相关的框架确实涉猎没有那么多，另一方面是因为真的就是太多了，很多微服务框架的诞生都是源自微创新的驱动，并不是很有必要去深入了解太多。
+
+当然，了解微创新的问题背景、解决问题的思路，我认为是很有趣的。“能工模型，巧匠窃意”，说的就是这个意思。
+
+### Spring Boot with Spring Cloud
+
+![Spring Framework](../.gitbook/assets/image%20%2828%29.png)
 
 
+
+### Eclipse Vert.X Microservices framework
+
+![Vert.X](../.gitbook/assets/image%20%2816%29.png)
+
+### Oracle Helidon Microservices framework
+
+![Helidon](../.gitbook/assets/image%20%2825%29.png)
+
+### GoMicro \(Golang Microservices framework\)
+
+![GoMicro](../.gitbook/assets/image%20%2820%29.png)
+
+### Moleculer \(NodeJS Microservices framework\)
+
+![Moleculer](../.gitbook/assets/image%20%2827%29.png)
+
+### Quarkus Microservices framework
+
+![Quarkus](../.gitbook/assets/image%20%2826%29.png)
+
+### Micronaut framework
+
+![Micronaut](../.gitbook/assets/image%20%2814%29.png)
+
+### Lightbend Lagom Microservices framework
+
+![Lagom](../.gitbook/assets/image%20%2822%29.png)
+
+
+
+### AxonIQ Microservices framework
+
+![AxonIQ](../.gitbook/assets/image%20%2824%29.png)
+
+### Ballerina Microservices Language
+
+![Ballerina](../.gitbook/assets/image%20%2821%29.png)
+
+
+
+
+
+## 参考文献
+
+1. Top 10 Microservice Frameworks for 2020, [https://medium.com/microservices-architecture/top-10-microservices-framework-for-2020-eefb5e66d1a2](https://medium.com/microservices-architecture/top-10-microservices-framework-for-2020-eefb5e66d1a2)
+2. Awesome Microservices, [https://github.com/mfornos/awesome-microservices\#platforms](https://github.com/mfornos/awesome-microservices#platforms)
+3. 
