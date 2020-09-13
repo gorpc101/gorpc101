@@ -151,6 +151,10 @@ Micronaut主要致力于提供一些必要的能力来构建功能完备的微�
 
 ![Lagom](../.gitbook/assets/image%20%2822%29.png)
 
+Lagom是一个开源框架，使用Java、Scala来构建响应式微服务，Lagom构建在[Akka](https://akka.io/)和[Play](https://www.playframework.com/)之上，这些都是在生产环境中接受过检验的技术。
+
+Lagom还提供了一个集成开发环境，允许开发人员将关注点聚焦在业务逻辑处理上，而不是将多个服务绑定在一起。一行命令就可以完成工程构建、组件的启动、服务的启动，以及准备好整个Lagom基础设施。程序运行期间，如果检测到代码有变动，会自动重新编译并完成热加载。
+
 
 
 ## AxonIQ Microservices framework
@@ -173,5 +177,6 @@ Micronaut主要致力于提供一些必要的能力来构建功能完备的微�
 4. Go Micro, [https://github.com/micro](https://github.com/micro)
 5. Microservices in Go using Micro, Brian Ketelsen, [https://www.youtube.com/watch?v=OcjMi9cXItY](https://www.youtube.com/watch?v=OcjMi9cXItY)
 6. Quark, [https://www.thoughtworks.com/radar/languages-and-frameworks/quarkus](https://www.thoughtworks.com/radar/languages-and-frameworks/quarkus)
-7. Ballerina, [https://ballerina.io/](https://ballerina.io/)
-8. 
+7. Lagom, [https://www.lagomframework.com/](https://www.lagomframework.com/)
+8. Ballerina, [https://ballerina.io/](https://ballerina.io/)
+9. 
