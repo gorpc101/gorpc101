@@ -126,6 +126,27 @@ Moleculer的几个主要特点：
 
 ![Micronaut](../.gitbook/assets/image%20%2814%29.png)
 
+Micronaut是一个现代的、基于JVM的、全栈式的微服务框架，用于构建模块化、易测试的微服务程序。
+
+Micronaut是由Grails框架的创建者开发的，并且吸收了多年来从单体架构演变到微服务架构过程中Spring、Spring Boot、Grails构建微服务的一些好的思想。
+
+Micronaut主要致力于提供一些必要的能力来构建功能完备的微服务程序，包括：
+
+* 依赖注入（DI）和控制反转（IoC）；
+* 合理的默认配置、自动配置；
+* 配置和配置共享；
+* 服务发现；
+* HTTP请求路由；
+* HTTP client，支持客户端负载均衡；
+
+同时Micronaut也避免了Spring、Spring Boot、Grails框架的一些不足之处，Mironaut提供了：
+
+* 快速启动；
+* 减少内存占用；
+* 尽量少用反射；
+* 尽量少用代理；
+* 单测更简单；
+
 ## Lightbend Lagom Microservices framework
 
 ![Lagom](../.gitbook/assets/image%20%2822%29.png)
