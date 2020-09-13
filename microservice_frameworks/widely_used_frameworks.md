@@ -34,7 +34,25 @@
 
 ![Spring Framework](../.gitbook/assets/image%20%2828%29.png)
 
+Spring Boot是用于编写微服务的一个流行的Java框架，它提供了各种扩展以助力构建全栈微服务。 Spring Boot可以通过从多个协作组件的组合协作来实现一个简单的应用，并支持进一步构建更大型的系统。它可以用于构建小型和大型系统。通过控制反转（IoC），Spring Boot也很容易与其他流行的框架集成。
 
+Spring Boot本身对各层次进行了抽象设计，通过插件的方式来实现定制化扩展，如：
+
+* 数据管理层面，借助Spring JDBC、Spring JPA、Spring MongoDB、Spring Apache Cassandra等于各类存储组件进行对接；
+* 失败策略层面，通过集成Resilience4J来支持分布式系统中的故障处理，支持熔断、重试、超时、频控、降级（fallback handler）、隔板（bulkhead）等；
+* 可观察性层面，Spring Boot Actuator支持运行时健康检查、查看日志、Metrics；
+* 网络通信层面，Spring可以构建响应式（reactive）应用程序，通过Spring MVC构建Rest API也容易，与MQ可以很方便地集成以构建异步工作模式的服务，还具有构建SOAP应用程序的模块支持；
+* 消息中间件层面，支持通过插件与Apache Kafka、AMQP、RabbitMQ、ActiveMQ集成；
+* 监控平台层面，支持通过插件与Consul、Prometheus、Jaeger、Grafana集成；
+* 云原生层面，它也易于在docker、k8s上部署，也支持opentracing、etcd、DevOps；
+* 安全性层面：Spring Security对OAuth2、会话管理也都有支持，易于构建有状态和无状态的服务、Key Vault、网关模式；
+* 配置管理层面，Spring Cloud Config支持分布式配置管理；
+* 服务发现层面，支持客户端、服务端的服务发现；
+* 性能相关层面，也支持缓存、负载均衡、集群管理等；
+* 数据格式层面，支持常见的JSON、XML等；
+* 测试层面，Spring Testing、mock测试、profiling分析测试等；
+
+经过这么多年的发展，Spring Boot已经发展的相当完善，也有非常广泛的应用，并且因为是模块化的，相对来说学习难度也不大。
 
 ### Eclipse Vert.X Microservices framework
 
