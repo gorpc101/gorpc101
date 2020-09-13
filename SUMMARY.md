@@ -10,7 +10,8 @@
 
 ## 微服务框架调研 <a id="microservice_frameworks"></a>
 
-* [微服务框架一览](microservice_frameworks/widely_used_frameworks.md)
+* [框架该如何选型](microservice_frameworks/kuang-jia-gai-ru-he-xuan-xing.md)
+* [流行微服务框架](microservice_frameworks/widely_used_frameworks.md)
 * [自研微服务框架](microservice_frameworks/why_develop_another_one.md)
 
 ## 微服务框架设计 <a id="design_of_framework"></a>
