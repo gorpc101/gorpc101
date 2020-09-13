@@ -63,6 +63,19 @@ Vert.X是构建轻量级、高性能微服务的理想选择，并且它还支�
 
 ![Helidon](../.gitbook/assets/image%20%2825%29.png)
 
+Helidon微服务框架是由Oracle开发的，它包含了一系列的Java库来写微服务。Helidon有两个版本，Hlidon MP以及Helidon SE。拿Helidon和Spring Boot做个对比，Spring Boot在很多地方要做的更好，Helidon相比来说还是一个比较“年轻”的框架，文档也不是很健全，遇到问题定位、解决起来会比较困难。
+
+Helidon SE采用了最新Java SE的特性（响应式stream、异步编程、函数编程、流式API等），实现了一个精简的工具集。Helidon SE支持GraalVM native镜像，占用空间小，启动超快。Helidon SE中Helidon WebServer提供了REST的支持，基于Netty构建，采用了一种简单直接的请求路由API。
+
+下面是Helidon MP构建微服务的一些特性：
+
+* 云原生支持：可与云原生场景下的一些流行工具进行互操作，如docker、k8s、prometheus、opentracing、etcd；
+* gRPC支持：Helidon gRPC Server支持创建gRPC应用程序；
+* 配置管理：配置组件提供了一个Java API来加载、解析配置（kv形式的）；
+* 健康检查：支持通过外部工具（如k8s）来定期检查、报告服务健康状态；
+* 分布式跟踪：Helidon内部通过标准的Opentracing API包含了对tracing的支持，tracing已经集成到了WebServer、gRPC Server、Security等组件中；
+* 安全性：支持认证（Authentication）、授权（Authorization）、审计（Audit）；
+
 ## GoMicro \(Golang Microservices framework\)
 
 ![GoMicro](../.gitbook/assets/image%20%2820%29.png)
@@ -101,5 +114,6 @@ Vert.X是构建轻量级、高性能微服务的理想选择，并且它还支�
 
 1. Top 10 Microservice Frameworks for 2020, [https://medium.com/microservices-architecture/top-10-microservices-framework-for-2020-eefb5e66d1a2](https://medium.com/microservices-architecture/top-10-microservices-framework-for-2020-eefb5e66d1a2)
 2. Awesome Microservices, [https://github.com/mfornos/awesome-microservices\#platforms](https://github.com/mfornos/awesome-microservices#platforms)
-3. Ballerina, [https://ballerina.io/](https://ballerina.io/)
-
+3. Microservices with Oracle Helidon, [https://www.baeldung.com/microservices-oracle-helidon](https://www.baeldung.com/microservices-oracle-helidon)
+4. Ballerina, [https://ballerina.io/](https://ballerina.io/)
+5. 
