@@ -101,6 +101,19 @@ Go Micro具有如下一些特点：
 
 ![Moleculer](../.gitbook/assets/image%20%2827%29.png)
 
+Moleculer是一个基于NodeJS开发的微服务框架，NodeJS现在很流行，如果你或者团队技术栈是JavaScript的话，那么Moleculer这个框架就很合适，它也是一个快速、现代、强大的微服务框架，可以帮助构建高性能的、可靠的、可扩展的服务。
+
+Moleculer的几个主要特点：
+
+* 事件驱动架构；
+* 内置的服务注册、动态服务发现；
+* 请求负载均衡（基于roundrobin、random、cpu使用率、latency、sharding等）；
+* 容错能力（断路器、隔板、重试、超时、降级等）；
+* 内置的缓存方案（内存缓存、内存LRU缓存、Redis等）；
+* 可插拔的logger实现（Console、File、Pino、Bunyan、Winston、Debug、Datalog、Log4js）；
+* 内置的metrics，支持对接不同监控平台；
+* 内置的tracing，支持对接不同分布式跟踪平台（Console、datalog、Event、Jaeger、Zipkin）；
+
 ## Quarkus Microservices framework
 
 ![Quarkus](../.gitbook/assets/image%20%2826%29.png)
@@ -133,5 +146,6 @@ Go Micro具有如下一些特点：
 2. Awesome Microservices, [https://github.com/mfornos/awesome-microservices\#platforms](https://github.com/mfornos/awesome-microservices#platforms)
 3. Microservices with Oracle Helidon, [https://www.baeldung.com/microservices-oracle-helidon](https://www.baeldung.com/microservices-oracle-helidon)
 4. Go Micro, [https://github.com/micro](https://github.com/micro)
-5. Ballerina, [https://ballerina.io/](https://ballerina.io/)
-6. 
+5. Microservices in Go using Micro, Brian Ketelsen, [https://www.youtube.com/watch?v=OcjMi9cXItY](https://www.youtube.com/watch?v=OcjMi9cXItY)
+6. Ballerina, [https://ballerina.io/](https://ballerina.io/)
+7. 
