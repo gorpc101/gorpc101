@@ -179,7 +179,14 @@ Axon能够满足最苛刻的企业要求，例如存储扩展、安全性、集�
 
 
 
+Ballerina并不是一个微服务框架，而是一个用来编写分布式程序的分布式编程语言。使用Ballerina可以构建松耦合的微服务，使用它来编写一些网络程序是非常方便的。Ballerina是一个开源的编程语言，也是一个云时代背景下开发人员用来构建分布式软件的平台吧。
 
+Ballerina包含了很多对线程、流式、安全等方面的支持，篇幅原因就不展开了，从整体来看，Ballerina主要提供了：
+
+* 用于网络请求、提供网络服务的语言级别的程序结构；
+* 用于并发、网络交互相关的抽象和语法，这些可表示成时序图，支持源码文本和时序图的互相转换；
+* 提供了更灵活的结构化类型系统，和传统的静态类型语言相比，耦合度更低；
+* 支持更现代的研发周期，提供了包括持续集成、持续交付（CI/CD）相关的工具如Jenkins、Travis、Codefresh，还有系统观测工具如Prometheus、Zipkin、Honeycomb，还有面向云的容器编排工具如K8S。
 
 ## 参考文献
 
@@ -191,4 +198,4 @@ Axon能够满足最苛刻的企业要求，例如存储扩展、安全性、集�
 6. Quark, [https://www.thoughtworks.com/radar/languages-and-frameworks/quarkus](https://www.thoughtworks.com/radar/languages-and-frameworks/quarkus)
 7. Lagom, [https://www.lagomframework.com/](https://www.lagomframework.com/)
 8. Ballerina, [https://ballerina.io/](https://ballerina.io/)
-9. 
+
