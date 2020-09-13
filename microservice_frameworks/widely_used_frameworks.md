@@ -188,6 +188,8 @@ Ballerina包含了很多对线程、流式、安全等方面的支持，篇幅�
 * 提供了更灵活的结构化类型系统，和传统的静态类型语言相比，耦合度更低；
 * 支持更现代的研发周期，提供了包括持续集成、持续交付（CI/CD）相关的工具如Jenkins、Travis、Codefresh，还有系统观测工具如Prometheus、Zipkin、Honeycomb，还有面向云的容器编排工具如K8S。
 
+本节对业界比较流行的微服务框架进行了简单的总结和对比，可以看到它们有很多的共性，也有自己特有的微创新。正所谓能工模型、巧匠窃意，能认识到别人工作的价值，并综合起来为自己所用，更好地服务于业务才是最重要的。
+
 ## 参考文献
 
 1. Top 10 Microservice Frameworks for 2020, [https://medium.com/microservices-architecture/top-10-microservices-framework-for-2020-eefb5e66d1a2](https://medium.com/microservices-architecture/top-10-microservices-framework-for-2020-eefb5e66d1a2)
