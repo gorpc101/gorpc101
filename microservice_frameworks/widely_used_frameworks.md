@@ -118,6 +118,10 @@ Moleculer的几个主要特点：
 
 ![Quarkus](../.gitbook/assets/image%20%2826%29.png)
 
+这个框架是相当新的，非常适合Kubernetes爱好者。Quarkus是Red Hat开发的微服务框架，用于编写Java应用程序，另外，它推崇云原生、容器优先。Quarkus是专为GraalVM和HotSpot量身定制的Kubernetes原生Java框架，它是由同类最佳的Java库和标准共同精心打造的。Quarkus的目标是使Java成为Kubernetes和Serverless环境中的领先平台，同时为开发人员提供统一的编程模型，更好地解决分布式应用架构问题。
+
+更多相关信息可以参考：[https://www.thoughtworks.com/radar/languages-and-frameworks/quarkus](https://www.thoughtworks.com/radar/languages-and-frameworks/quarkus)。
+
 ## Micronaut framework
 
 ![Micronaut](../.gitbook/assets/image%20%2814%29.png)
@@ -147,5 +151,6 @@ Moleculer的几个主要特点：
 3. Microservices with Oracle Helidon, [https://www.baeldung.com/microservices-oracle-helidon](https://www.baeldung.com/microservices-oracle-helidon)
 4. Go Micro, [https://github.com/micro](https://github.com/micro)
 5. Microservices in Go using Micro, Brian Ketelsen, [https://www.youtube.com/watch?v=OcjMi9cXItY](https://www.youtube.com/watch?v=OcjMi9cXItY)
-6. Ballerina, [https://ballerina.io/](https://ballerina.io/)
-7. 
+6. Quark, [https://www.thoughtworks.com/radar/languages-and-frameworks/quarkus](https://www.thoughtworks.com/radar/languages-and-frameworks/quarkus)
+7. Ballerina, [https://ballerina.io/](https://ballerina.io/)
+8. 
