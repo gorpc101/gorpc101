@@ -67,7 +67,7 @@ Helidon微服务框架是由Oracle开发的，它包含了一系列的Java库来
 
 Helidon SE采用了最新Java SE的特性（响应式stream、异步编程、函数编程、流式API等），实现了一个精简的工具集。Helidon SE支持GraalVM native镜像，占用空间小，启动超快。Helidon SE中Helidon WebServer提供了REST的支持，基于Netty构建，采用了一种简单直接的请求路由API。
 
-下面是Helidon MP构建微服务的一些特性：
+下面是Helidon MP构建微服务的一些特点：
 
 * 云原生支持：可与云原生场景下的一些流行工具进行互操作，如docker、k8s、prometheus、opentracing、etcd；
 * gRPC支持：Helidon gRPC Server支持创建gRPC应用程序；
@@ -79,6 +79,23 @@ Helidon SE采用了最新Java SE的特性（响应式stream、异步编程、函
 ## GoMicro \(Golang Microservices framework\)
 
 ![GoMicro](../.gitbook/assets/image%20%2820%29.png)
+
+Go Micro是一个支持可插拔的微服务框架，它支持服务发现（通过consul实现）、支持http通信、支持Google Protocol Buffer、JSON序列化，也支持发布订阅模式。
+
+Go Micro解决了构建可扩展系统的一些关键问题。它采用微服务架构模式并将其转换为一组工具，这些工具充当平台的构建块。Micro处理分布式系统的复杂性，并建立了一些开发人员容易理解的抽象设计。
+
+技术在不断发展，技术栈也总是在变化的，Micro通过可插拔的插件来解决此类问题，想构建面向未来的系统可以考虑Go Micro。
+
+Go Micro具有如下一些特点：
+
+* API网关：Micro的API提供了强大的请求路由能力，主要是借助服务发现以及可插拔的handlers，能够支持http、grpc、websockets、发布事件等；
+* 交互式命令行：该工具提供了一些命令来帮助我们了解Micro微服务运行的具体情况；
+* 服务代理：通过Go Micro构建的一个透明代理，整合服务发现、负载均衡、编解码、中间件、transport、消息broker等插件，可以独立运行，也可以随应用一起运行；
+* 服务模板：根据协议描述文件快速生成服务模板，只需简单几个步骤就可以快速投入到编码过程中。每次开发新的Go Micro服务也总是相同的操作流程，习惯之后非常方便；
+* Slack机器人：提供了一个Slack机器人，允许在您的平台上运行，并让您从Slack中轻松管理应用程序。该微型机器人启用了ChatOps，并使您能够通过消息与团队一起完成所有工作；
+* Web仪表盘：使您可以浏览服务，描述其endpoint、请求和响应格式，甚至直接查询它们。
+
+准确地说，Go Micro并不只是一个框架，或者一个工具集，它提供了一个相对比较完整的生态，如丰富的插件支持、Slack机器人、Web仪表盘等这些关乎业务定制化、运维效率、服务质量的相关建设。如果技术栈是Go的话，可以考虑选择Go Micro。
 
 ## Moleculer \(NodeJS Microservices framework\)
 
@@ -115,5 +132,6 @@ Helidon SE采用了最新Java SE的特性（响应式stream、异步编程、函
 1. Top 10 Microservice Frameworks for 2020, [https://medium.com/microservices-architecture/top-10-microservices-framework-for-2020-eefb5e66d1a2](https://medium.com/microservices-architecture/top-10-microservices-framework-for-2020-eefb5e66d1a2)
 2. Awesome Microservices, [https://github.com/mfornos/awesome-microservices\#platforms](https://github.com/mfornos/awesome-microservices#platforms)
 3. Microservices with Oracle Helidon, [https://www.baeldung.com/microservices-oracle-helidon](https://www.baeldung.com/microservices-oracle-helidon)
-4. Ballerina, [https://ballerina.io/](https://ballerina.io/)
-5. 
+4. Go Micro, [https://github.com/micro](https://github.com/micro)
+5. Ballerina, [https://ballerina.io/](https://ballerina.io/)
+6. 
