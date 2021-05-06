@@ -6,14 +6,19 @@
 
 我们进行框架选型时，脑海中其实列了一个checklist，对现有框架进行层层检查，最后整理出一个表格，可以看到A框架满足那些条目，B框架满足哪些条目，C框架又满足哪些条目，等等。这是对比选择同类产品时所常用的一种方法，如以Spring Boot、Go Micro、BRpc为例：
 
-|  | Spring Boot | Go Micro | BRpc |
-| :--- | :--- | :--- | :--- |
-| multi languages | N | N | N |
-| RPC support | Y | Y | Y |
-| naming service | Y | Y | Y |
-| logging | Y | Y | Y |
-| tracing | Y | Y | Y |
-| ... | ... | ... | ... |
+| concerns \ framework | Spring Boot | Go Micro | BRpc | GRPC |
+| :--- | :--- | :--- | :--- | :--- |
+| multi languages | N | N | N | Y |
+| unary rpc | Y | Y | Y | Y |
+| stream rpc | Y | Y | Y | Y |
+| naming service | Y | Y | Y | Y |
+| logging | Y | Y | Y | Y |
+| tracing | Y | Y | Y | Y |
+| ... | ... | ... | ... | ... |
+| tcp transport | Y | Y | Y | N |
+| udp transport | Y | Y | Y | N |
+| http/2 transport | Y | Y | Y | Y |
+| grpc integration | Y | Y | Y | - |
 
 其实，这里的框架选型时的checklist也未尝不是我们的一个设计目标，它也是设计目标中的一部分。
 
@@ -22,7 +27,7 @@
 gorpc101系列，是以系统性介绍一个微服务框架的研发为目的，并非以超越某个流行的rpc框架为目的。我们的设计目标相对来说也比较清晰：
 
 * 功能完整：框架提供相对完整的能力，并提供默认实现，开箱即用；
-  * 支持tcp/udp/unix/http等transport，支持扩展传输类型；
+  * 支持tcp/udp/http等transport，支持扩展传输类型；
   * 支持rpc通信方式，并提供灵活的rpc控制能力，如指定超时时间等；
   * 支持服务注册发现，支持扩展服务注册发现方式，如借助consul、zipkin、etcd等；
   * 支持codec，支持扩展协议类型；
@@ -40,5 +45,5 @@ gorpc101系列，是以系统性介绍一个微服务框架的研发为目的，
 * 易使用：基于框架开发微服务时应该很简单、省时省力省心；
 * go开发：使用go语言开发该微服务框架，主要面向go后端开发者；
 
-总结一下，微服务框架gorpc要遵循 **“小而美”** 的设计，是基于go开发的主要面向后台开发的微服务框架，旨在提升后台开发效率，让大家摆脱各种琐碎的细节，转而更加专注于服务质量本身。**Simple but Powerful**，提供业界领先或近似的高性能处理，也支持服务注册发现、rpc通信等相对完整的能力，并支持灵活地扩展，也支持便捷地开发环境设置和服务模板生成、测试代码生成等，让研发变得更高效！
+总结一下，gorpc遵循 **“小而美”** 的设计，提供灵活的扩展能力以适应不同的研发运营场景，让开发人员从琐碎的工作中解脱出来真正地专注于服务质量本身。
 
