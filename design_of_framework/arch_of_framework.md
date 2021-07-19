@@ -20,7 +20,11 @@
 
 ## 整体架构
 
+![&#x6574;&#x4F53;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;](../.gitbook/assets/image%20%2830%29.png)
+
 根据前面确定的设计目标，来设计开发我们的微服务框架gorpc，gorpc的整体（功能）架构如下图所示。
+
+
 
 ![gorpc&#x6574;&#x4F53;&#x67B6;&#x6784;](../.gitbook/assets/gorpc-zheng-ti-jia-gou-she-ji-.png)
 
