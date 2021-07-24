@@ -214,12 +214,12 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="arch_of_framework.html">
+        <li class="chapter " data-level="4.2" data-path="method-of-design.html">
             
-                <a href="arch_of_framework.html">
+                <a href="method-of-design.html">
             
                     
-                    架构设计
+                    设计方法
             
                 </a>
             
@@ -227,7 +227,20 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.3" data-path="design_of_modules.html">
+        <li class="chapter " data-level="4.3" data-path="arch_of_framework.html">
+            
+                <a href="arch_of_framework.html">
+            
+                    
+                    整体设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.4" data-path="design_of_modules.html">
             
                 <a href="design_of_modules.html">
             
@@ -240,7 +253,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="polish_the_design.html">
+        <li class="chapter " data-level="4.5" data-path="polish_the_design.html">
             
                 <a href="polish_the_design.html">
             
@@ -705,282 +718,6 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x6A21;&#x5757;&#x8BBE;&#x8BA1;">&#x6A21;&#x5757;&#x8BBE;&#x8BA1;</h1>
-<pre><code class="lang-text">@startuml
-
-package &quot;helloworld&quot; {
-
-    interface GreeterService {
-        +Hello(ctx, *Request) (*Response, error)
-    }
-
-    class GreeterServiceImpl {
-        +Hello(ctx, *Request) (*Response, error)
-    }
-    GreeterServiceImpl -up-|&gt; GreeterService
-
-    class GreeterServiceDesc {
-        Name
-        Methods map[strin]HandleFunc
-    }
-}
-note right of helloworld
-    &#x901A;&#x5E38;&#x6211;&#x4EEC;&#x7531;google protobuf&#x4F5C;&#x4E3A;IDL:
-    - &#x6307;&#x5BFC;&#x670D;&#x52A1;api&#x7684;&#x5B9A;&#x4E49;
-    - &#x6307;&#x5BFC;client&#x548C;server stub&#x751F;&#x6210;
-end note
-
-
-package &quot;server&quot; {
-
-    class Server {
-        +modules []*ServerModule
-        +Start()
-        +Stop()
-        +Handle(h Handler)
-    }
-
-    interface ServerModule {
-        +Start()
-        +Stop()
-    }
-
-    Server &quot;1&quot; *-down- &quot;N&quot; ServerModule
-    note right of Server
-        &#x5305;&#x542B;&#x591A;&#x4E2A;ServerModule
-        &#x5404;ServerModule&#x5404;&#x53F8;&#x5176;&#x804C;
-    end note
-
-    class PacketServer {
-        svr *Server
-    }
-    PacketServer -up-|&gt; ServerModule
-
-    class StreamServer {
-        svr *Server
-    }
-    StreamServer -up-|&gt; ServerModule
-
-    class HttpServer {
-        svr *Server
-    }
-    HttpServer -up-|&gt; ServerModule
-
-    Server -up-&gt; GreeterServiceImpl
-    &apos;note left of Handler : type GreeterService struct{} \nfunc (s *GreeterService) Hello(ctx, req) (rsp, error)
-
-    Server -up-&gt; GreeterServiceDesc
-
-    interface Router {
-        Route(rpc string) (Method, error)
-    }
-    Server -left-&gt; Router
-
-    interface Interceptor {
-    }
-    interface Auth {
-    }
-    interface Breaker {
-    }
-    interface Limiter {
-    }
-
-}
-
-package &quot;codec&quot; {
-
-    interface Session {
-        TraceContext() (interface{}, error)
-        ParseRequestBody(req interface{}) error
-        Request() interface{}
-        Response() interface{}
-        Logger() logger
-    }
-
-    interface Codec {
-        Encode(v interface{}) ([]byte, error)
-        Decode([]byte) (interface{}, error)
-    }
-
-    interface MessageReader {
-        Codec
-        Read(net.Conn) (interface{}, error)
-    }
-
-    interface SessionBuilder {
-        Build(req interface{}) (Session, error)
-    }
-
-    MessageReader -right-&gt; Codec
-    MessageReader -left-&gt; SessionBuilder
-    SessionBuilder -left-&gt; Session
-
-    StreamServer -down-&gt; MessageReader
-    PacketServer -down-&gt; MessageReader
-    HttpServer -down-&gt; MessageReader
-}
-
-package &quot;registry&quot; {
-    interface Registry {
-        +Register(*Service, opts ... RegisterOption) error
-        +DeRegister(*Service) error
-        +GetService(string) ([]*Service, error)
-        +ListServices() ([]*Service, error)
-        +Watcher() (Watcher, error)
-    }
-    Registry &quot;1&quot; *-down- &quot;1&quot; Watcher
-
-    interface Watcher {
-        +Next() (*Result, error)
-        +Stop()
-    }
-    Watcher -right-&gt; Result
-
-    class Result {
-        +Action ActionType
-        +Service *Service
-    }
-    enum ActionType {
-        CREATE
-        UPDATE
-        DELETE
-    }
-    Result -up-&gt; ActionType
-}
-note top of registry
-naming service
-end note
-
-package &quot;client&quot; {
-
-    interface Client {
-        Invoke(ctx, req) (rsp, error)
-    }
-
-    interface Transport {
-        Send(ctx, req) (rsp, error)
-    }
-    class TcpTransport {
-        pool *TcpConnectionPool
-        rd *MessageReader
-    }
-    TcpTransport &quot;1&quot; --&gt; &quot;TcpConnectionPool&quot;
-    TcpTransport -up-|&gt; Transport
-
-    class UdpTransport {
-        pool *UdpSocketPool
-        rd *MessageReader
-    }
-    UdpTransport &quot;1&quot; --&gt; &quot;UdpSocketPool&quot;
-    UdpTransport -up-|&gt; Transport
-
-
-    interface ConnectionPool {
-        +GetConn() (net.Conn, error)
-        +FreeConn(net.Conn)
-    }
-    TcpConnectionPool --|&gt; ConnectionPool
-    UdpSocketPool --|&gt; ConnectionPool
-
-    TcpConnectionPool &quot;1&quot; --&gt; &quot;N&quot; Endpoint
-    UdpSocketPool &quot;1&quot; --&gt; &quot;N&quot; Endpoint
-
-    class Endpoint {
-        -conn net.Conn
-        +Read([]byte) (n, error)
-        +Write([]byte) (n, error)
-    }
-
-    class ClientAdapter {
-        name string
-        codec Codec
-        selector Selector
-        trans Transport
-        +Invoke(ctx, req) (rsp, error)
-    }
-    note left: general client
-
-    ClientAdapter -right-|&gt; Client
-    ClientAdapter -up-&gt; MessageReader
-    ClientAdapter --&gt; Transport
-    ClientAdapter --&gt; Selector
-
-    package &quot;selector&quot; {
-        interface Selector {
-            Select(service string, opts ...SelectOption) (Next, error)
-            Mark(service string, node *registry.Node, err error)
-            Reset(service string)
-            Close() error
-        }
-
-        SimpleSelector -up-|&gt; Selector
-        ConsulSelector -up-|&gt; Selector
-        EtcdSelector -up-|&gt; Selector
-        Selector -up-&gt; Registry
-        note bottom of EtcdSelector
-            loadbanlancer based on NamingService
-        end note
-
-    }
-}
-
-package &quot;gorpc&quot; {
-    class Wrapper {
-        +NewService(name, addr, version string)
-        +Run()
-        +NewServiceClient(name, version string)
-    }
-    Wrapper --&gt; Service
-
-    class Service {
-        +Name string
-        +Version string
-        +Run(svr *Server)
-    }
-
-    Service -left-&gt; helloworld
-    Service -left-&gt; Server
-}
-note left of Wrapper
-    gorpc.NewService&#x6CE8;&#x518C;&#x65B0;&#x670D;&#x52A1;
-    Run&#x8FD0;&#x884C;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;
-    NewClient&#x521B;&#x5EFA;rpcclient
-end note
-
-package &quot;broker&quot; {
-    interface Broker {
-        ServerModule
-        Subsribe(ctx, topic, gp) (&lt;-chan interface{}, error)
-        Publish(ctx, topic, req) error
-    }
-    Broker -right-|&gt; ServerModule
-
-    class NATS {
-        NewBroker(masterAddr) (Broker, error)
-    }
-    NATS -up-|&gt; Broker
-
-    class Kafka {
-        NewBroker(masterAddr) (Broker, error)
-    }
-    Kafka -up-|&gt; Broker
-}
-note top of Broker
-message bus
-end note
-
-package &quot;tracing&quot; {
-    interface Tracer {
-        Begin(session)
-        Finish(session)
-    }
-
-    Server -right-&gt; Tracer
-    ClientAdapter -up-&gt; Tracer
-}
-note right: tracing definition
-
-@enduml
-</code></pre>
 
                                 
                                 </section>
@@ -1008,7 +745,7 @@ note right: tracing definition
 
             
                 
-                <a href="arch_of_framework.html" class="navigation navigation-prev " aria-label="Previous page: 架构设计">
+                <a href="arch_of_framework.html" class="navigation navigation-prev " aria-label="Previous page: 整体设计">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1024,7 +761,7 @@ note right: tracing definition
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"模块设计","level":"4.3","depth":1,"next":{"title":"打磨设计","level":"4.4","depth":1,"path":"design_of_framework/polish_the_design.md","ref":"design_of_framework/polish_the_design.md","articles":[]},"previous":{"title":"架构设计","level":"4.2","depth":1,"path":"design_of_framework/arch_of_framework.md","ref":"design_of_framework/arch_of_framework.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"design_of_framework/design_of_modules.md","mtime":"2021-07-13T17:38:47.718Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-24T06:50:52.530Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"模块设计","level":"4.4","depth":1,"next":{"title":"打磨设计","level":"4.5","depth":1,"path":"design_of_framework/polish_the_design.md","ref":"design_of_framework/polish_the_design.md","articles":[]},"previous":{"title":"整体设计","level":"4.3","depth":1,"path":"design_of_framework/arch_of_framework.md","ref":"design_of_framework/arch_of_framework.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"design_of_framework/design_of_modules.md","mtime":"2021-07-24T06:51:49.213Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-24T07:07:03.372Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
