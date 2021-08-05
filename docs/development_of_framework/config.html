@@ -240,9 +240,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="../design_of_framework/design_of_modules.html">
+        <li class="chapter " data-level="4.4" data-path="../design_of_framework/design_of_modules/">
             
-                <a href="../design_of_framework/design_of_modules.html">
+                <a href="../design_of_framework/design_of_modules/">
             
                     
                     模块设计
@@ -250,6 +250,38 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="../design_of_framework/design_of_modules/config.html">
+            
+                <a href="../design_of_framework/design_of_modules/config.html">
+            
+                    
+                    config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="../design_of_framework/design_of_modules/log.html">
+            
+                <a href="../design_of_framework/design_of_modules/log.html">
+            
+                    
+                    log
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -718,20 +750,6 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="config">config</h1>
-<h2 id="&#x6A21;&#x5757;&#x8BBE;&#x8BA1;&#xFF1A;config">&#x6A21;&#x5757;&#x8BBE;&#x8BA1;&#xFF1A;config</h2>
-<p>&#x8BE5;&#x6A21;&#x5757;&#x7684;&#x8BE6;&#x7EC6;&#x8BBE;&#x8BA1;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x5176;&#x4E2D;&#x4E3B;&#x8981;&#x5305;&#x62EC;Loader&#x3001;Provider&#x3001;Watcher&#x3001;Decoder&#x3001;Config&#x7684;&#x63A5;&#x53E3;&#x8BBE;&#x8BA1;&#x53CA;&#x5B9E;&#x73B0;&#x3002;</p>
-<p><img src="../assets/image%20%2834%29.png" alt=""></p>
-<p>&#x7ED3;&#x5408;&#x4E0A;&#x56FE;&#x6211;&#x4EEC;&#x7B80;&#x5355;&#x89E3;&#x91CA;&#x4E0B;&#x5404;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x3001;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#x3001;&#x5B9E;&#x73B0;&#x7C7B;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x4EE5;&#x53CA;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E48;&#x8BBE;&#x8BA1;&#x3002;  </p>
-<ul>
-<li>Loader&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x9009;&#x62E9;&#x7B26;fp&#x6765;&#x83B7;&#x53D6;&#x4E00;&#x4EFD;&#x914D;&#x7F6E;Config&#x3002;loader&#x662F;Loader&#x63A5;&#x53E3;&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#xFF0C;&#x5B83;&#x76F8;&#x5F53;&#x4E8E;&#x5176;&#x4ED6;&#x51E0;&#x4E2A;&#x6838;&#x5FC3;&#x63A5;&#x53E3;Provider&#x3001;Decoder&#x7684;&#x4F7F;&#x7528;&#x8005;&#xFF0C;&#x901A;&#x8FC7;Provider&#x83B7;&#x53D6;&#x5230;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;Decoder&#x5B8C;&#x6210;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x7684;&#x89E3;&#x6790;&#x3002;&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x652F;&#x6301;reload&#x914D;&#x7F6E;&#x7684;&#x573A;&#x666F;&#xFF0C;loader&#x901A;&#x8FC7;Provider&#x5BF9;Watcher&#x7684;&#x652F;&#x6301;&#x6765;&#x83B7;&#x53D6;&#x914D;&#x7F6E;&#x53D8;&#x66F4;&#x76F8;&#x5173;&#x7684;&#x901A;&#x77E5;&#xFF0C;&#x5E76;&#x91CD;&#x65B0;reload&#x914D;&#x7F6E;&#x6587;&#x4EF6;Config&#xFF1B;</li>
-<li>Provider&#xFF0C;&#x5B83;&#x662F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x63D0;&#x4F9B;&#x8005;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;FilesystemProvider&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8FDC;&#x7A0B;&#x7684;&#x914D;&#x7F6E;&#x4E2D;&#x5FC3;&#xFF0C;&#x5982;ConsulProvider&#x3001;ZooKeeperProvider&#x7B49;&#x3002;Provider&#x8981;&#x6709;&#x80FD;&#x529B;&#x611F;&#x77E5;&#x914D;&#x7F6E;&#x7684;&#x53D8;&#x66F4;&#xFF0C;&#x5E76;&#x7ED9;Loader&#x53D1;&#x51FA;&#x901A;&#x77E5;&#xFF0C;&#x6240;&#x4EE5;Provider&#x5FC5;&#x987B;&#x8981;&#x5B9E;&#x73B0;Watcher&#x63A5;&#x53E3;&#xFF1B;</li>
-<li>Watcher&#xFF0C;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x662F;&#x6709;&#x53EF;&#x80FD;&#x5728;&#x521D;&#x6B21;&#x52A0;&#x8F7D;&#x540E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#xFF0C;&#x5F53;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x4E00;&#x822C;&#x5E0C;&#x671B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x80FD;&#x611F;&#x77E5;&#x5230;&#x5E76;&#x4F7F;&#x7528;&#x6700;&#x65B0;&#x914D;&#x7F6E;&#x5DE5;&#x4F5C;&#x3002;Watcher&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x76D1;&#x63A7;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x53D8;&#x5316;&#x5E76;&#x53CA;&#x65F6;&#x901A;&#x77E5;&#x5916;&#x90E8;&#xFF0C;&#x5982;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5185;&#x5BB9;&#x53D8;&#x5316;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x7684;fsnotify&#x6765;&#x76D1;&#x63A7;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x7684;&#x53D8;&#x66F4;&#xFF1B;</li>
-<li>Event &amp;&amp; EventType&#xFF0C;Watcher&#x89C2;&#x6D4B;&#x5230;&#x7684;&#x4E8B;&#x4EF6;&#x53CA;&#x5206;&#x7C7B;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x80FD;&#x533A;&#x5206;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x53D1;&#x751F;&#x4E86;&#x54EA;&#x79CD;&#x53D8;&#x5316;&#xFF0C;&#x5982;&#x4FEE;&#x6539;&#x65F6;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x91CD;&#x65B0;reload&#x914D;&#x7F6E;&#xFF0C;&#x90A3;&#x5982;&#x679C;&#x662F;&#x5220;&#x9664;&#x5462;&#xFF1F;&#x7A0B;&#x5E8F;&#x5BF9;&#x6B64;&#x7684;&#x5904;&#x7406;&#x5E94;&#x4E0D;&#x540C;&#xFF0C;&#x56E0;&#x6B64;&#x6709;&#x5FC5;&#x8981;&#x6839;&#x636E;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#x6765;&#x8BE6;&#x7EC6;&#x533A;&#x5206;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x5B9A;&#x4E49;&#x4E86;Event&#x4E2D;&#x5305;&#x542B;EventType&#x5B57;&#x6BB5;&#xFF1B;</li>
-<li>Decoder&#xFF0C;&#x5F53;&#x62FF;&#x5230;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x540E;&#xFF0C;Loader&#x8FD8;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x5408;&#x9002;&#x7684;&#x89E3;&#x6790;&#x5668;&#x5C06;[]byte&#x89E3;&#x6790;&#x6210;&#x7B26;&#x5408;&#x67D0;&#x79CD;&#x683C;&#x5F0F;&#x89C4;&#x8303;&#x7684;&#x7ED3;&#x6784;&#x5316;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x5982;JSON&#x3001;YAML&#x3001;INI&#x7B49;&#xFF1B;</li>
-<li>Config&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x90A3;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x63D0;&#x4F9B;&#x7ED9;&#x4E00;&#x81F4;&#x7684;&#x914D;&#x7F6E;&#x8BFB;&#x53D6;&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x8BFB;&#x53D6;&#x65E0;&#x5916;&#x4E4E;&#x8BFB;&#x53D6;string&#x3001;int&#x3001;bool&#x7B49;&#x7C7B;&#x578B;&#xFF0C;&#x80FD;&#x6EE1;&#x8DB3;&#x5927;&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x573A;&#x573A;&#x666F;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x6307;&#x5B9A;&#x4E9B;&#x590D;&#x6742;&#x7684;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x5982;slice of struct&#xFF0C;&#x8FD9;&#x79CD;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x901A;&#x8FC7;helper&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x89E3;&#x51B3;&#xFF0C;&#x5982;&#x5148;&#x62FF;&#x5230;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x53CD;&#x5E8F;&#x5217;&#xFF1B;</li>
-<li>config&#xFF0C;config&#x662F;Config&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#xFF0C;&#x5B83;&#x5B9E;&#x73B0;&#x4E86;&#x914D;&#x7F6E;&#x7684;Read&#x529F;&#x80FD;&#x3002;&#x6CE8;&#x610F;&#x5F53;&#x6709;&#x914D;&#x7F6E;&#x6587;&#x4EF6;reload&#x65F6;&#x5E0C;&#x671B;&#x4ECD;&#x7136;&#x5BF9;&#x5916;&#x90E8;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x4E00;&#x81F4;&#x7684;&#x8BFB;&#x53D6;&#x63A5;&#x53E3;&#xFF0C;&#x540C;&#x65F6;&#x5E0C;&#x671B;&#x907F;&#x514D;&#x8BA9;&#x7528;&#x6237;&#x72EC;&#x81EA;&#x5904;&#x7406;&#x6536;&#x53D6;Watcher&#x4E8B;&#x4EF6;&#x5E76;&#x901A;&#x77E5;&#x66F4;&#x65B0;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x5982;&#x679C;&#x6846;&#x67B6;&#x4E0D;&#x80FD;&#x89E3;&#x51B3;&#x8FD9;&#x4E9B;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x914D;&#x7F6E;reload&#xFF0C;&#x5F00;&#x53D1;&#x5C06;&#x4E0D;&#x5F97;&#x4E0D;&#x91CD;&#x590D;&#x5199;&#x7C7B;&#x4F3C;&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;&#xFF0C;&#x5F88;&#x662F;&#x4E0D;&#x4FBF;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x8BBE;&#x8BA1;config&#x65F6;&#xFF0C;&#x5185;&#x90E8;&#x901A;&#x8FC7;&#x53D8;&#x91CF;value atomic.Value&#x6765;&#x5B58;&#x50A8;&#x6700;&#x65B0;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x6BCF;&#x6B21;&#x8BFB;&#x53D6;&#x65F6;&#x90FD;&#x4F1A;&#x5148;atomicValue.Load()&#x62FF;&#x5230;&#x6700;&#x65B0;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8BFB;&#x53D6;&#x3002;</li>
-</ul>
-<p>&#x76F8;&#x4FE1;&#x5927;&#x5BB6;&#x5DF2;&#x7ECF;&#x660E;&#x767D;&#x8FD9;&#x4E48;&#x8BBE;&#x8BA1;&#x7684;&#x521D;&#x8877;&#x4E86;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x80FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x601D;&#x8003;&#xFF0C;&#x4E0D;&#x59A8;&#x5206;&#x4EAB;&#x78B0;&#x649E;&#x4E00;&#x4E0B;&#x3002;</p>
 
                                 
                                 </section>
@@ -775,7 +793,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"config","level":"7.7","depth":1,"next":{"title":"naming","level":"7.8","depth":1,"path":"development_of_framework/naming.md","ref":"development_of_framework/naming.md","articles":[]},"previous":{"title":"log","level":"7.6","depth":1,"path":"development_of_framework/log.md","ref":"development_of_framework/log.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"development_of_framework/config.md","mtime":"2021-07-24T06:50:37.139Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-24T07:07:03.372Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"config","level":"7.7","depth":1,"next":{"title":"naming","level":"7.8","depth":1,"path":"development_of_framework/naming.md","ref":"development_of_framework/naming.md","articles":[]},"previous":{"title":"log","level":"7.6","depth":1,"path":"development_of_framework/log.md","ref":"development_of_framework/log.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"development_of_framework/config.md","mtime":"2021-08-05T17:02:48.952Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-05T17:03:01.970Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

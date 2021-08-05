@@ -1,0 +1,846 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>config · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="log.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    作者
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../preface.html">
+            
+                <a href="../../preface.html">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">服务架构演变</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../architectures/evolution_of_architectures.html">
+            
+                <a href="../../architectures/evolution_of_architectures.html">
+            
+                    
+                    软件服务架构演变
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../architectures/pros_and_cons.html">
+            
+                <a href="../../architectures/pros_and_cons.html">
+            
+                    
+                    微服务架构优势及挑战
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">微服务框架调研</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../microservice_frameworks/kuang-jia-gai-ru-he-xuan-xing.html">
+            
+                <a href="../../microservice_frameworks/kuang-jia-gai-ru-he-xuan-xing.html">
+            
+                    
+                    框架该如何选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../microservice_frameworks/widely_used_frameworks.html">
+            
+                <a href="../../microservice_frameworks/widely_used_frameworks.html">
+            
+                    
+                    流行微服务框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../microservice_frameworks/why_develop_another_one.html">
+            
+                <a href="../../microservice_frameworks/why_develop_another_one.html">
+            
+                    
+                    自研微服务框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">微服务框架设计</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../goal_of_framework.html">
+            
+                <a href="../goal_of_framework.html">
+            
+                    
+                    设计目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../method-of-design.html">
+            
+                <a href="../method-of-design.html">
+            
+                    
+                    设计方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../arch_of_framework.html">
+            
+                <a href="../arch_of_framework.html">
+            
+                    
+                    整体设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    模块设计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.4.1" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    log
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../polish_the_design.html">
+            
+                <a href="../polish_the_design.html">
+            
+                    
+                    打磨设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">框架研发质量</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../quality_of_framework/unit_test.html">
+            
+                <a href="../../quality_of_framework/unit_test.html">
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../quality_of_framework/test_coverage.html">
+            
+                <a href="../../quality_of_framework/test_coverage.html">
+            
+                    
+                    测试覆盖率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../../quality_of_framework/benchmark.html">
+            
+                <a href="../../quality_of_framework/benchmark.html">
+            
+                    
+                    基准测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../../quality_of_framework/ya-li-ce-shi.html">
+            
+                <a href="../../quality_of_framework/ya-li-ce-shi.html">
+            
+                    
+                    压力测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../../quality_of_framework/automate_the_workflow.html">
+            
+                <a href="../../quality_of_framework/automate_the_workflow.html">
+            
+                    
+                    流水线自动化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">开源协同基础</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../opensource_and_cooperation/cvs.html">
+            
+                <a href="../../opensource_and_cooperation/cvs.html">
+            
+                    
+                    代码版本控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../../opensource_and_cooperation/cooperation.html">
+            
+                <a href="../../opensource_and_cooperation/cooperation.html">
+            
+                    
+                    开源协同方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../../opensource_and_cooperation/contribution.html">
+            
+                <a href="../../opensource_and_cooperation/contribution.html">
+            
+                    
+                    贡献方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../../opensource_and_cooperation/milestones.html">
+            
+                <a href="../../opensource_and_cooperation/milestones.html">
+            
+                    
+                    确定里程碑 & 迭代
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../../opensource_and_cooperation/code_review.html">
+            
+                <a href="../../opensource_and_cooperation/code_review.html">
+            
+                    
+                    代码评审
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">框架编码实现</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../development_of_framework/helloworld.html">
+            
+                <a href="../../development_of_framework/helloworld.html">
+            
+                    
+                    helloworld
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../development_of_framework/server.html">
+            
+                <a href="../../development_of_framework/server.html">
+            
+                    
+                    server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../development_of_framework/client.html">
+            
+                <a href="../../development_of_framework/client.html">
+            
+                    
+                    client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="../../development_of_framework/transport.html">
+            
+                <a href="../../development_of_framework/transport.html">
+            
+                    
+                    transport
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="../../development_of_framework/codec.html">
+            
+                <a href="../../development_of_framework/codec.html">
+            
+                    
+                    codec
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="../../development_of_framework/log.html">
+            
+                <a href="../../development_of_framework/log.html">
+            
+                    
+                    log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="../../development_of_framework/config.html">
+            
+                <a href="../../development_of_framework/config.html">
+            
+                    
+                    config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="../../development_of_framework/naming.html">
+            
+                <a href="../../development_of_framework/naming.html">
+            
+                    
+                    naming
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="../../development_of_framework/pool.html">
+            
+                <a href="../../development_of_framework/pool.html">
+            
+                    
+                    pool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="../../development_of_framework/plugin.html">
+            
+                <a href="../../development_of_framework/plugin.html">
+            
+                    
+                    plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="../../development_of_framework/filter.html">
+            
+                <a href="../../development_of_framework/filter.html">
+            
+                    
+                    filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.12" data-path="../../development_of_framework/admin.html">
+            
+                <a href="../../development_of_framework/admin.html">
+            
+                    
+                    admin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.13" data-path="../../development_of_framework/metrics.html">
+            
+                <a href="../../development_of_framework/metrics.html">
+            
+                    
+                    metrics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">框架持续打磨</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../../optimize_the_framework/documentation.html">
+            
+                <a href="../../optimize_the_framework/documentation.html">
+            
+                    
+                    撰写高质量文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../../optimize_the_framework/community.html">
+            
+                <a href="../../optimize_the_framework/community.html">
+            
+                    
+                    打造活跃友好的社区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../../optimize_the_framework/maintainer_best_practices.html">
+            
+                <a href="../../optimize_the_framework/maintainer_best_practices.html">
+            
+                    
+                    项目管理最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../../thanks.html">
+            
+                <a href="../../thanks.html">
+            
+                    
+                    致谢
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">附录</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../../appendix/references.html">
+            
+                <a href="../../appendix/references.html">
+            
+                    
+                    参考文献
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >config</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="config">config</h1>
+<h2 id="&#x6A21;&#x5757;&#x8BBE;&#x8BA1;&#xFF1A;config">&#x6A21;&#x5757;&#x8BBE;&#x8BA1;&#xFF1A;config</h2>
+<p>&#x8BE5;&#x6A21;&#x5757;&#x7684;&#x8BE6;&#x7EC6;&#x8BBE;&#x8BA1;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x5176;&#x4E2D;&#x4E3B;&#x8981;&#x5305;&#x62EC;Loader&#x3001;Provider&#x3001;Watcher&#x3001;Decoder&#x3001;Config&#x7684;&#x63A5;&#x53E3;&#x8BBE;&#x8BA1;&#x53CA;&#x5B9E;&#x73B0;&#x3002;</p>
+<p><img src="../../assets/image%20%2834%29.png" alt="config&#x6A21;&#x5757;&#x8BBE;&#x8BA1;"></p>
+<p>&#x7ED3;&#x5408;&#x4E0A;&#x56FE;&#x6211;&#x4EEC;&#x7B80;&#x5355;&#x89E3;&#x91CA;&#x4E0B;&#x5404;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x3001;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#x3001;&#x5B9E;&#x73B0;&#x7C7B;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x4EE5;&#x53CA;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E48;&#x8BBE;&#x8BA1;&#x3002;  </p>
+<ul>
+<li>Loader&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x9009;&#x62E9;&#x7B26;fp&#x6765;&#x83B7;&#x53D6;&#x4E00;&#x4EFD;&#x914D;&#x7F6E;Config&#x3002;loader&#x662F;Loader&#x63A5;&#x53E3;&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#xFF0C;&#x5B83;&#x76F8;&#x5F53;&#x4E8E;&#x5176;&#x4ED6;&#x51E0;&#x4E2A;&#x6838;&#x5FC3;&#x63A5;&#x53E3;Provider&#x3001;Decoder&#x7684;&#x4F7F;&#x7528;&#x8005;&#xFF0C;&#x901A;&#x8FC7;Provider&#x83B7;&#x53D6;&#x5230;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;Decoder&#x5B8C;&#x6210;&#x914D;&#x7F6E;&#x5185;&#x5BB9;&#x7684;&#x89E3;&#x6790;&#x3002;&#x5BF9;&#x4E8E;&#x9700;&#x8981;&#x652F;&#x6301;reload&#x914D;&#x7F6E;&#x7684;&#x573A;&#x666F;&#xFF0C;loader&#x901A;&#x8FC7;Provider&#x5BF9;Watcher&#x7684;&#x652F;&#x6301;&#x6765;&#x83B7;&#x53D6;&#x914D;&#x7F6E;&#x53D8;&#x66F4;&#x76F8;&#x5173;&#x7684;&#x901A;&#x77E5;&#xFF0C;&#x5E76;&#x91CD;&#x65B0;reload&#x914D;&#x7F6E;&#x6587;&#x4EF6;Config&#xFF1B;</li>
+<li>Provider&#xFF0C;&#x5B83;&#x662F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x63D0;&#x4F9B;&#x8005;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;FilesystemProvider&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8FDC;&#x7A0B;&#x7684;&#x914D;&#x7F6E;&#x4E2D;&#x5FC3;&#xFF0C;&#x5982;ConsulProvider&#x3001;ZooKeeperProvider&#x7B49;&#x3002;Provider&#x8981;&#x6709;&#x80FD;&#x529B;&#x611F;&#x77E5;&#x914D;&#x7F6E;&#x7684;&#x53D8;&#x66F4;&#xFF0C;&#x5E76;&#x7ED9;Loader&#x53D1;&#x51FA;&#x901A;&#x77E5;&#xFF0C;&#x6240;&#x4EE5;Provider&#x5FC5;&#x987B;&#x8981;&#x5B9E;&#x73B0;Watcher&#x63A5;&#x53E3;&#xFF1B;</li>
+<li>Watcher&#xFF0C;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x662F;&#x6709;&#x53EF;&#x80FD;&#x5728;&#x521D;&#x6B21;&#x52A0;&#x8F7D;&#x540E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#xFF0C;&#x5F53;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x4E00;&#x822C;&#x5E0C;&#x671B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x80FD;&#x611F;&#x77E5;&#x5230;&#x5E76;&#x4F7F;&#x7528;&#x6700;&#x65B0;&#x914D;&#x7F6E;&#x5DE5;&#x4F5C;&#x3002;Watcher&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x76D1;&#x63A7;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x53D8;&#x5316;&#x5E76;&#x53CA;&#x65F6;&#x901A;&#x77E5;&#x5916;&#x90E8;&#xFF0C;&#x5982;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5185;&#x5BB9;&#x53D8;&#x5316;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x7684;fsnotify&#x6765;&#x76D1;&#x63A7;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x7684;&#x53D8;&#x66F4;&#xFF1B;</li>
+<li>Event &amp;&amp; EventType&#xFF0C;Watcher&#x89C2;&#x6D4B;&#x5230;&#x7684;&#x4E8B;&#x4EF6;&#x53CA;&#x5206;&#x7C7B;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x80FD;&#x533A;&#x5206;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x53D1;&#x751F;&#x4E86;&#x54EA;&#x79CD;&#x53D8;&#x5316;&#xFF0C;&#x5982;&#x4FEE;&#x6539;&#x65F6;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x91CD;&#x65B0;reload&#x914D;&#x7F6E;&#xFF0C;&#x90A3;&#x5982;&#x679C;&#x662F;&#x5220;&#x9664;&#x5462;&#xFF1F;&#x7A0B;&#x5E8F;&#x5BF9;&#x6B64;&#x7684;&#x5904;&#x7406;&#x5E94;&#x4E0D;&#x540C;&#xFF0C;&#x56E0;&#x6B64;&#x6709;&#x5FC5;&#x8981;&#x6839;&#x636E;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#x6765;&#x8BE6;&#x7EC6;&#x533A;&#x5206;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x5B9A;&#x4E49;&#x4E86;Event&#x4E2D;&#x5305;&#x542B;EventType&#x5B57;&#x6BB5;&#xFF1B;</li>
+<li>Decoder&#xFF0C;&#x5F53;&#x62FF;&#x5230;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x540E;&#xFF0C;Loader&#x8FD8;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x5408;&#x9002;&#x7684;&#x89E3;&#x6790;&#x5668;&#x5C06;[]byte&#x89E3;&#x6790;&#x6210;&#x7B26;&#x5408;&#x67D0;&#x79CD;&#x683C;&#x5F0F;&#x89C4;&#x8303;&#x7684;&#x7ED3;&#x6784;&#x5316;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x5982;JSON&#x3001;YAML&#x3001;INI&#x7B49;&#xFF1B;</li>
+<li>Config&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x90A3;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x63D0;&#x4F9B;&#x7ED9;&#x4E00;&#x81F4;&#x7684;&#x914D;&#x7F6E;&#x8BFB;&#x53D6;&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x8BFB;&#x53D6;&#x65E0;&#x5916;&#x4E4E;&#x8BFB;&#x53D6;string&#x3001;int&#x3001;bool&#x7B49;&#x7C7B;&#x578B;&#xFF0C;&#x80FD;&#x6EE1;&#x8DB3;&#x5927;&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x573A;&#x573A;&#x666F;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x6307;&#x5B9A;&#x4E9B;&#x590D;&#x6742;&#x7684;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x5982;slice of struct&#xFF0C;&#x8FD9;&#x79CD;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x901A;&#x8FC7;helper&#x51FD;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x89E3;&#x51B3;&#xFF0C;&#x5982;&#x5148;&#x62FF;&#x5230;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x53CD;&#x5E8F;&#x5217;&#xFF1B;</li>
+<li>config&#xFF0C;config&#x662F;Config&#x7684;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#xFF0C;&#x5B83;&#x5B9E;&#x73B0;&#x4E86;&#x914D;&#x7F6E;&#x7684;Read&#x529F;&#x80FD;&#x3002;&#x6CE8;&#x610F;&#x5F53;&#x6709;&#x914D;&#x7F6E;&#x6587;&#x4EF6;reload&#x65F6;&#x5E0C;&#x671B;&#x4ECD;&#x7136;&#x5BF9;&#x5916;&#x90E8;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x4E00;&#x81F4;&#x7684;&#x8BFB;&#x53D6;&#x63A5;&#x53E3;&#xFF0C;&#x540C;&#x65F6;&#x5E0C;&#x671B;&#x907F;&#x514D;&#x8BA9;&#x7528;&#x6237;&#x72EC;&#x81EA;&#x5904;&#x7406;&#x6536;&#x53D6;Watcher&#x4E8B;&#x4EF6;&#x5E76;&#x901A;&#x77E5;&#x66F4;&#x65B0;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x5982;&#x679C;&#x6846;&#x67B6;&#x4E0D;&#x80FD;&#x89E3;&#x51B3;&#x8FD9;&#x4E9B;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x914D;&#x7F6E;reload&#xFF0C;&#x5F00;&#x53D1;&#x5C06;&#x4E0D;&#x5F97;&#x4E0D;&#x91CD;&#x590D;&#x5199;&#x7C7B;&#x4F3C;&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;&#xFF0C;&#x5F88;&#x662F;&#x4E0D;&#x4FBF;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x8BBE;&#x8BA1;config&#x65F6;&#xFF0C;&#x5185;&#x90E8;&#x901A;&#x8FC7;&#x53D8;&#x91CF;value atomic.Value&#x6765;&#x5B58;&#x50A8;&#x6700;&#x65B0;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x6BCF;&#x6B21;&#x8BFB;&#x53D6;&#x65F6;&#x90FD;&#x4F1A;&#x5148;atomicValue.Load()&#x62FF;&#x5230;&#x6700;&#x65B0;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8BFB;&#x53D6;&#x3002;</li>
+</ul>
+<p>&#x76F8;&#x4FE1;&#x5927;&#x5BB6;&#x5DF2;&#x7ECF;&#x660E;&#x767D;&#x8FD9;&#x4E48;&#x8BBE;&#x8BA1;&#x7684;&#x521D;&#x8877;&#x4E86;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x80FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x601D;&#x8003;&#xFF0C;&#x4E0D;&#x59A8;&#x5206;&#x4EAB;&#x78B0;&#x649E;&#x4E00;&#x4E0B;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 模块设计">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="log.html" class="navigation navigation-next " aria-label="Next page: log">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"config","level":"4.4.1","depth":2,"next":{"title":"log","level":"4.4.2","depth":2,"path":"design_of_framework/design_of_modules/log.md","ref":"design_of_framework/design_of_modules/log.md","articles":[]},"previous":{"title":"模块设计","level":"4.4","depth":1,"path":"design_of_framework/design_of_modules/README.md","ref":"design_of_framework/design_of_modules/README.md","articles":[{"title":"config","level":"4.4.1","depth":2,"path":"design_of_framework/design_of_modules/config.md","ref":"design_of_framework/design_of_modules/config.md","articles":[]},{"title":"log","level":"4.4.2","depth":2,"path":"design_of_framework/design_of_modules/log.md","ref":"design_of_framework/design_of_modules/log.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"design_of_framework/design_of_modules/config.md","mtime":"2021-08-05T17:02:48.952Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-05T17:03:01.970Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
