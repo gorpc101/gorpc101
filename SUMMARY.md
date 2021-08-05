@@ -19,7 +19,9 @@
 * [设计目标](design_of_framework/goal_of_framework.md)
 * [设计方法](design_of_framework/method-of-design.md)
 * [整体设计](design_of_framework/arch_of_framework.md)
-* [模块设计](design_of_framework/design_of_modules.md)
+* [模块设计](design_of_framework/design_of_modules/README.md)
+  * [config](design_of_framework/design_of_modules/config.md)
+  * [log](design_of_framework/design_of_modules/log.md)
 * [打磨设计](design_of_framework/polish_the_design.md)
 
 ## 框架研发质量 <a id="quality_of_framework"></a>
