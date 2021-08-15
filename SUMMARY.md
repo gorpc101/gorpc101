@@ -43,6 +43,7 @@
 
 ## 框架编码实现 <a id="development_of_framework"></a>
 
+* [errs](development_of_framework/errs.md)
 * [helloworld](development_of_framework/helloworld.md)
 * [server](development_of_framework/server.md)
 * [client](development_of_framework/client.md)
