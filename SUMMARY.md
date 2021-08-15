@@ -23,6 +23,7 @@
   * [config](design_of_framework/design_of_modules/config.md)
   * [logging](design_of_framework/design_of_modules/logging.md)
   * [errors](design_of_framework/design_of_modules/errors.md)
+  * [codec](design_of_framework/design_of_modules/codec.md)
 * [打磨设计](design_of_framework/polish_the_design.md)
 
 ## 框架研发质量 <a id="quality_of_framework"></a>
