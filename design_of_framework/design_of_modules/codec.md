@@ -101,7 +101,20 @@ RPC通信中常用的压缩/解压缩算法包括：
 
 从上图不难看出，其包括核心接口Codec、Compressor、Serializer、Session、SessionBuilder，以及将其整合在一起的MessageReader，我们详细解释这么设计的原因及工作过程。
 
+* Codec，负责应用层协议的编解码逻辑，如果应用层协议的请求头、响应头不统一的话，那就要为client、server分别定制一个编解码逻辑。client端针对请求头做编码逻辑，对响应头做解码逻辑；server端则是针对响应头做编码逻辑，对请求头做解码逻辑；
+* Compressor，以gzip算法为例，压缩、解压缩逻辑一定是匹配的，和编解码逻辑不一样，压缩、解压缩针对的是\[\]byte，而非proto.Message，所以这个在client、server端都是同一套代码；
+* Serializer，以pb序列化方式为例，PBSerializer目的是将proto.Message序列化为\[\]byte，以方便后续在网络中传输。其逆操作则是将\[\]byte反序列化为proto.Message；
+* Session，通常理解为会话，会话其实也可以在client、server端存储，只不过JavaEE相关的实践让更多人理解为server端才有会话概念，这种理解其实是不准确的。对于RPC通信而言，client、server端都有一些会话信息需要存储，所以我们这里使用Session的概念也是比较合适的。也有些框架使用RPCContext或者Msg来表示类似概念；
+* SessionBuilder，负责实例化Session，Session只是最基础的抽象，我们还需要针对unary rpc、streaming rpc做些更具体的特化，这就是UnaryRPCSession、StreamRPCSession，对应地SessionBuilder也需要做特化，这就是UnaryRPCSessionBuilder、StreamRPCSessionBuilder；
+* MessageReader，就是codec中核心中的核心了，它负责将上述各个部分整合在一起，完成完整的消息读取的功能。以tcpserver为例，我们为每个入连接分配一个MessageReader，它负责从连接上读取数据并通过codec进行Decode逻辑，成功后则继续通过compressor进行Decompress，然后再进行反序列化操作，这样就拿到了客户端发送来的请求。有了这个请求之后就可以构建session，对于unary rpc的话，收一个请求构建一个session就可以。对于流式请求的话，则需要根据请求的某些流操作标识来决定是否创建新的流，进而决定是否创建新的session。
 
+ps：可能有人会考虑，关于MessageReader，也可以针对unary rpc和streaming rpc进行MessgeReader的特化，但是这样设计可能不一定是正确的。比如可能client通过一个tcpconn通信，执行RPC1时是unary rpc，但是执行RPC2时是streaming rpc。那我们这个连接的MessageReader应该怎么管理呢？相比之下我们前面提及的方案会更好些。
+
+这大致就是codec模块的大致整体设计了，后续读者可以查看源码具体实现，进一步理解。
+
+### 总结
+
+本节介绍了codec模块的整体设计，包括编解码逻辑、序列化/反序列化逻辑、压缩/解压缩逻辑、应用层协议的设计、rpc的会话管理，希望能加深读者对这方面的认识，慢慢地开始进入gorpc框架的核心了。
 
 ### 参考内容
 
