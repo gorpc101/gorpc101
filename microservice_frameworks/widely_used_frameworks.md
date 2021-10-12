@@ -2,7 +2,7 @@
 
 前面介绍了微服务框架选型中关注的一些因素，接下来对业界流行的微服务框架做个简单的调研。通过对比，有助于我们建立一个全局的视野，理解不同微服务框架的优点和不足，也为引出后续自研微服务框架部分做些铺垫。
 
-![](../.gitbook/assets/image%20%2815%29.png)
+![](<../.gitbook/assets/image (15).png>)
 
 现在来看，微服务框架或者可以用来写微服务的组件包，真的是非常多，有很多甚至闻所未闻。思考了下，一方面是因为技术栈的原因，对技术栈以外的框架确实涉猎没有那么多，另一方面是因为真的是数量太多了。很多微服务框架的诞生都是源自微创新的驱动，并不是很有必要去深入了解太多。
 
@@ -10,7 +10,7 @@
 
 ## Spring Boot with Spring Cloud
 
-![Spring Framework](../.gitbook/assets/image%20%2828%29.png)
+![Spring Framework](<../.gitbook/assets/image (16).png>)
 
 Spring Boot是用于编写微服务的一个流行的Java框架，它提供了各种扩展以助力构建全栈微服务。 Spring Boot可以通过从多个协作组件的组合协作来实现一个简单的应用，并支持进一步构建更大型的系统。它可以用于构建小型和大型系统。通过控制反转（IoC），Spring Boot也很容易与其他流行的框架集成。
 
@@ -34,7 +34,7 @@ Spring Boot本身对各层次进行了抽象设计，通过插件的方式来实
 
 ## Eclipse Vert.X Microservices framework
 
-![Vert.X](../.gitbook/assets/image%20%2816%29.png)
+![Vert.X](<../.gitbook/assets/image (17).png>)
 
 另一个流行的微服务服务框架Vert.X，它出自Eclipse基金金，该框架支持多种编程语言。因此，如果您的研发团队拥有Java、Kotlin、JavaScript技术栈的开发人员，那么此微服务框架应该是他们的理想选择，用Vert.X工具包构建运行在JVM上的响应式微服务。
 
@@ -63,7 +63,7 @@ Vert.X是构建轻量级、高性能微服务的理想选择，并且它还支�
 
 ## Oracle Helidon Microservices framework
 
-![Helidon](../.gitbook/assets/image%20%2825%29.png)
+![Helidon](<../.gitbook/assets/image (18).png>)
 
 Helidon微服务框架是由Oracle开发的，它包含了一系列的Java库来写微服务。Helidon有两个版本，Hlidon MP以及Helidon SE。拿Helidon和Spring Boot做个对比，Spring Boot在很多地方要做的更好，Helidon相比来说还是一个比较“年轻”的框架，文档也不是很健全，遇到问题定位、解决起来会比较困难。
 
@@ -78,9 +78,9 @@ Helidon SE采用了最新Java SE的特性（响应式stream、异步编程、函
 * 分布式跟踪：Helidon内部通过标准的Opentracing API包含了对tracing的支持，tracing已经集成到了WebServer、gRPC Server、Security等组件中；
 * 安全性：支持认证（Authentication）、授权（Authorization）、审计（Audit）；
 
-## GoMicro \(Golang Microservices framework\)
+## GoMicro (Golang Microservices framework)
 
-![GoMicro](../.gitbook/assets/image%20%2820%29.png)
+![GoMicro](<../.gitbook/assets/image (19).png>)
 
 Go Micro是一个支持可插拔的微服务框架，它支持服务发现（通过consul实现）、支持http通信、支持Google Protocol Buffer、JSON序列化，也支持发布订阅模式。
 
@@ -99,9 +99,9 @@ Go Micro具有如下一些特点：
 
 准确地说，Go Micro并不只是一个框架，或者一个工具集，它提供了一个相对比较完整的生态，如丰富的插件支持、Slack机器人、Web仪表盘等这些关乎业务定制化、运维效率、服务质量的相关建设。如果技术栈是Go的话，可以考虑选择Go Micro。
 
-## Moleculer \(NodeJS Microservices framework\)
+## Moleculer (NodeJS Microservices framework)
 
-![Moleculer](../.gitbook/assets/image%20%2827%29.png)
+![Moleculer](<../.gitbook/assets/image (20).png>)
 
 Moleculer是一个基于NodeJS开发的微服务框架，NodeJS现在很流行，如果你或者团队技术栈是JavaScript的话，那么Moleculer这个框架就很合适，它也是一个快速、现代、强大的微服务框架，可以帮助构建高性能的、可靠的、可扩展的服务。
 
@@ -118,7 +118,7 @@ Moleculer的几个主要特点：
 
 ## Quarkus Microservices framework
 
-![Quarkus](../.gitbook/assets/image%20%2826%29.png)
+![Quarkus](<../.gitbook/assets/image (21).png>)
 
 这个框架是相当新的，非常适合Kubernetes爱好者。Quarkus是Red Hat开发的微服务框架，用于编写Java应用程序，另外，它推崇云原生、容器优先。Quarkus是专为GraalVM和HotSpot量身定制的Kubernetes原生Java框架，它是由同类最佳的Java库和标准共同精心打造的。Quarkus的目标是使Java成为Kubernetes和Serverless环境中的领先平台，同时为开发人员提供统一的编程模型，更好地解决分布式应用架构问题。
 
@@ -126,7 +126,7 @@ Moleculer的几个主要特点：
 
 ## Micronaut framework
 
-![Micronaut](../.gitbook/assets/image%20%2814%29.png)
+![Micronaut](<../.gitbook/assets/image (22).png>)
 
 Micronaut是一个现代的、基于JVM的、全栈式的微服务框架，用于构建模块化、易测试的微服务程序。
 
@@ -151,9 +151,9 @@ Micronaut主要致力于提供一些必要的能力来构建功能完备的微�
 
 ## Lightbend Lagom Microservices framework
 
-![Lagom](../.gitbook/assets/image%20%2822%29.png)
+![Lagom](<../.gitbook/assets/image (23).png>)
 
-Lagom是一个开源框架，使用Java、Scala来构建响应式微服务，Lagom构建在[Akka](https://akka.io/)和[Play](https://www.playframework.com/)之上，这些都是在生产环境中接受过检验的技术。
+Lagom是一个开源框架，使用Java、Scala来构建响应式微服务，Lagom构建在[Akka](https://akka.io)和[Play](https://www.playframework.com)之上，这些都是在生产环境中接受过检验的技术。
 
 Lagom还提供了一个集成开发环境，允许开发人员将关注点聚焦在业务逻辑处理上，而不是将多个服务绑定在一起。一行命令就可以完成工程构建、组件的启动、服务的启动，以及准备好整个Lagom基础设施。程序运行期间，如果检测到代码有变动，会自动重新编译并完成热加载。
 
@@ -165,7 +165,7 @@ Lagom还提供了一个集成开发环境，允许开发人员将关注点聚焦
 
 ## AxonIQ Microservices framework
 
-![AxonIQ](../.gitbook/assets/image%20%2824%29.png)
+![AxonIQ](<../.gitbook/assets/image (24).png>)
 
 Axon提供了一种统一、高效的开发Java应用程序的方法，该Java应用程序可以在无需大量重构的情况下从单体式架构演进为事件驱动的微服务架构。
 
@@ -177,7 +177,7 @@ Axon能够满足最苛刻的企业要求，例如存储扩展、安全性、集�
 
 ## Ballerina Microservices Language
 
-![Ballerina](../.gitbook/assets/image%20%2821%29.png)
+![Ballerina](<../.gitbook/assets/image (25).png>)
 
 
 
@@ -195,11 +195,10 @@ Ballerina包含了很多对线程、流式、安全等方面的支持，篇幅�
 ## 参考文献
 
 1. Top 10 Microservice Frameworks for 2020, [https://medium.com/microservices-architecture/top-10-microservices-framework-for-2020-eefb5e66d1a2](https://medium.com/microservices-architecture/top-10-microservices-framework-for-2020-eefb5e66d1a2)
-2. Awesome Microservices, [https://github.com/mfornos/awesome-microservices\#platforms](https://github.com/mfornos/awesome-microservices#platforms)
+2. Awesome Microservices, [https://github.com/mfornos/awesome-microservices#platforms](https://github.com/mfornos/awesome-microservices#platforms)
 3. Microservices with Oracle Helidon, [https://www.baeldung.com/microservices-oracle-helidon](https://www.baeldung.com/microservices-oracle-helidon)
 4. Go Micro, [https://github.com/micro](https://github.com/micro)
 5. Microservices in Go using Micro, Brian Ketelsen, [https://www.youtube.com/watch?v=OcjMi9cXItY](https://www.youtube.com/watch?v=OcjMi9cXItY)
 6. Quark, [https://www.thoughtworks.com/radar/languages-and-frameworks/quarkus](https://www.thoughtworks.com/radar/languages-and-frameworks/quarkus)
-7. Lagom, [https://www.lagomframework.com/](https://www.lagomframework.com/)
-8. Ballerina, [https://ballerina.io/](https://ballerina.io/)
-
+7. Lagom, [https://www.lagomframework.com/](https://www.lagomframework.com)
+8. Ballerina, [https://ballerina.io/](https://ballerina.io)

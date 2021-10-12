@@ -24,7 +24,7 @@
 
 微服务架构模式语言，其实指的是一系列微服务架构设计开发中常采用的一些方法论（模式）的集合。
 
-![&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x6A21;&#x5F0F;&#x8BED;&#x8A00;](../.gitbook/assets/image%20%2817%29.png)
+![微服务架构模式语言](<../.gitbook/assets/image (12).png>)
 
 模式语言主要想达到两个目标：
 
@@ -67,7 +67,7 @@ _物理学中对一个物体或系统进行受力分析，为了判断出合力�
 
 举个电商网站的例子，这个程序接受用户订单、检查库存、用户现金余额、运输货物，大致可以分成这么几个组件，StoreFrontUI是前端展示，AccountService是账户服务，InventoryService是库存服务，ShippingService是物流服务，这几个组件联同业务逻辑实现都在一个项目中实现，整个应用打包成一个WAR包，在Apache Tomcat中部署。
 
-![&#x4F20;&#x7EDF;&#x7684;&#x5355;&#x4F53;&#x67B6;&#x6784;](../.gitbook/assets/image%20%2812%29.png)
+![传统的单体架构](<../.gitbook/assets/image (13).png>)
 
 单体架构的好处是，易于开发、测试、部署、伸缩。但是也存在明显的问题，参考我们上面列出的forces。
 
@@ -87,7 +87,7 @@ _物理学中对一个物体或系统进行受力分析，为了判断出合力�
 
 在微服务架构下，可以将上述几个相对独立的组件微服务化，以RestAPI接口的方式对外提供服务，每个微服务也有自己的专用的数据库。通过API网关可以对外部请求做一些鉴权、频控、适配、转换或者业务逻辑组合等相关的操作。
 
-![&#x73B0;&#x4EE3;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;](../.gitbook/assets/image%20%2818%29.png)
+![现代的微服务架构](<../.gitbook/assets/image (8).png>)
 
 通过微服务架构的方式，可以做到：
 
@@ -100,13 +100,12 @@ _物理学中对一个物体或系统进行受力分析，为了判断出合力�
   * 方便开发者（或新成员）快速了解服务逻辑；
   * IDE加载的代码量少了，响应更快，编码效率更高；
   * 应用启动速度更快，开发人员开发、测试、部署更快速；
-* 实现了故障隔离
+*   实现了故障隔离
 
-  如某个微服务存在内存泄露问题，那么现在也只会影响这一个服务本身，并不会影响到整个系统，这个微服务本身出现问题可以通过快速回滚该服务、重启该服务来解决。但是如果是单体架构，某个组件内存泄露会导致整体应用不可用。
+    如某个微服务存在内存泄露问题，那么现在也只会影响这一个服务本身，并不会影响到整个系统，这个微服务本身出现问题可以通过快速回滚该服务、重启该服务来解决。但是如果是单体架构，某个组件内存泄露会导致整体应用不可用。
+*   避免了被绑死在一个特定的技术栈
 
-* 避免了被绑死在一个特定的技术栈
-
-  当开发一个新服务的时候，开发人员可以选择一个合适的新技术栈来开发，即便是已经存在的微服务，也可以考虑通过新技术栈重写来实现，如将某个cpp服务用go重写。
+    当开发一个新服务的时候，开发人员可以选择一个合适的新技术栈来开发，即便是已经存在的微服务，也可以考虑通过新技术栈重写来实现，如将某个cpp服务用go重写。
 
 通过这个简单的例子及与传统单体架构的对比，读者朋友们应该能体会到微服务架构的生命力。
 
@@ -122,13 +121,12 @@ _物理学中对一个物体或系统进行受力分析，为了判断出合力�
   * 测试跨多个服务的请求处理，相比单体架构更困难；
   * 实现跨多个服务的请求处理，需要协调由不同团队负责的多个服务的逻辑（沟通、联调）；
   * 开发工具、IDE都是面向单体架构应用开发的，不是面向分布式服务开发的；
-* 部署比较复杂
+*   部署比较复杂
 
-  在生产环境中，部署和管理很多个服务构筑而成的系统，运维复杂性会比单体架构应用高很多。
+    在生产环境中，部署和管理很多个服务构筑而成的系统，运维复杂性会比单体架构应用高很多。
+*   增加了内存占用
 
-* 增加了内存占用
-
-  各个微服务假如独立部署，相对来说会占用更多的资源，如CPU、内存、机器等。比如一个微服务都是一个独立的JVM实例来隔离进程，那原来单体应用假如只有一个进程，现在光这几个核心服务就要多好几个JVM实例，内存占用会比原来多些。如果一个JVM实例一台机器，占用机器数会更多；如果部署在同一台机器上，内存占用的情况会更加糟糕。需要对不同微服务的资源分配进行更细力度的控制，不然微服务数量成百上千之后对计算成本是种比较大的浪费。
+    各个微服务假如独立部署，相对来说会占用更多的资源，如CPU、内存、机器等。比如一个微服务都是一个独立的JVM实例来隔离进程，那原来单体应用假如只有一个进程，现在光这几个核心服务就要多好几个JVM实例，内存占用会比原来多些。如果一个JVM实例一台机器，占用机器数会更多；如果部署在同一台机器上，内存占用的情况会更加糟糕。需要对不同微服务的资源分配进行更细力度的控制，不然微服务数量成百上千之后对计算成本是种比较大的浪费。
 
 ### 确定何时用微服务
 
@@ -165,7 +163,7 @@ _物理学中对一个物体或系统进行受力分析，为了判断出合力�
 
 单体架构中可能几个DB表join一下就完成了，但是现在每个微服务都有独立的数据库，数据查询需要经过DB对应的微服务提供的接口进行查询，然后再完成数据组合，实现会更复杂一点。
 
-微服务架构中，通常通过 [API Composition](https://microservices.io/patterns/data/api-composition.html) 或者 [CQRS \(Command Query Responsibility Segregation\)](https://microservices.io/patterns/data/cqrs.html) 来实现。
+微服务架构中，通常通过 [API Composition](https://microservices.io/patterns/data/api-composition.html) 或者 [CQRS (Command Query Responsibility Segregation)](https://microservices.io/patterns/data/cqrs.html) 来实现。
 
 ### 微服务架构模式
 
@@ -173,18 +171,16 @@ _物理学中对一个物体或系统进行受力分析，为了判断出合力�
 
 这里就建议多参考些已经经过实践检验的微服务架构下的常见设计模式。
 
-![&#x5FAE;&#x670D;&#x52A1;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;](../.gitbook/assets/image%20%2819%29.png)
+![微服务架构设计模式](<../.gitbook/assets/image (14).png>)
 
 据我了解，在很多年前前国内很多大厂就意识到了“微”服务架构的价值，并进行了探索，那个时候很多微服务相关的中间件、平台还不够成熟，但也已经进行了很多的实践。今天微服务架构大行其道，微服务场景下依赖的服务治理、日志监控、容器及容器编排技术等都日趋完备，微服务架构会越来越受欢迎。
 
 ## 参考文献
 
-1. What are microservices, [https://microservices.io/](https://microservices.io/)
-2. The pattern language is your guide, [https://microservices.io/](https://microservices.io/)
+1. What are microservices, [https://microservices.io/](https://microservices.io)
+2. The pattern language is your guide, [https://microservices.io/](https://microservices.io)
 3. F.Buschmann, R.Meunier, H.Rohnert, Pattern-Oriented Software Architecture
 4. Forces on Architecture decisions, [http://web.mit.edu/richh/www/writings/forces-wicsa-2012.pdf](http://web.mit.edu/richh/www/writings/forces-wicsa-2012.pdf)
-5. Domain-Driven Design, [https://en.wikipedia.org/wiki/Domain-driven\_design](https://en.wikipedia.org/wiki/Domain-driven_design)
+5. Domain-Driven Design, [https://en.wikipedia.org/wiki/Domain-driven_design](https://en.wikipedia.org/wiki/Domain-driven_design)
 6. Pattern: Microservice Architecture, [https://microservices.io/patterns/microservices.html](https://microservices.io/patterns/microservices.html)
-
-
 

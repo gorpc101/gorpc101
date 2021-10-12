@@ -15,15 +15,15 @@
 如何区分是哪种类型的错误呢？
 
 * 假如沿用go的使用习惯，可能会定义一个`var errFramework = errors.New("framework error")`基础，凡是框架类错误都通过`fmt.Errorf("%w: %s",  errFramework, err)`来声明，后续判断是否是框架错误的时候可以通过`errors.Is(err, errFramework)`来判断。通过这种方式来区分框架、业务错误已经足够了，但是继续考虑下RPC框架中涉及到C/S之间的通信，当server返回一个框架错误信息给client，序列化的时候没有把当前err包含的errFramework包含进去或者即便包含了client端也不不方便识别，这种实现就又变得是问题。
-* 另一种方式就是定义一个Error类型，其中包含错误码、错误信息、错误类型，设计如下图所示。Error实现了error接口，其Error\(\)方法用于展示错误码、描述、类型的格式化字符串。Error的类型主要包含框架错误、业务逻辑错误。
+* 另一种方式就是定义一个Error类型，其中包含错误码、错误信息、错误类型，设计如下图所示。Error实现了error接口，其Error()方法用于展示错误码、描述、类型的格式化字符串。Error的类型主要包含框架错误、业务逻辑错误。
 * 假如沿用go的使用习惯，可能会定义一个`var errFramework = errors.New("framework error")`基础，凡是框架类错误都通过`fmt.Errorf("%w: %s",  errFramework, err)`来声明，后续判断是否是框架错误的时候可以通过`errors.Is(err, errFramework)`来判断。通过这种方式来区分框架、业务错误已经足够了，但是继续考虑下RPC框架中涉及到C/S之间的通信，当server返回一个框架错误信息给client，序列化的时候没有把当前err包含的errFramework包含进去或者即便包含了client端也不不方便识别，这种实现就又变得是问题。
-* 另一种方式就是定义一个Error类型，其中包含错误码、错误信息、错误类型，设计如下图所示。Error实现了error接口，其Error\(\)方法用于展示错误码、描述、类型的格式化字符串。Error的类型主要包含框架错误、业务逻辑错误。这种方式在RPC通信时也比较好处理，直接把Error中的部分或者全部字段纳入序列化流程，序列化完成后、编码成响应包、发送即可，就解决了上面这点提到的问题。
+* 另一种方式就是定义一个Error类型，其中包含错误码、错误信息、错误类型，设计如下图所示。Error实现了error接口，其Error()方法用于展示错误码、描述、类型的格式化字符串。Error的类型主要包含框架错误、业务逻辑错误。这种方式在RPC通信时也比较好处理，直接把Error中的部分或者全部字段纳入序列化流程，序列化完成后、编码成响应包、发送即可，就解决了上面这点提到的问题。
 
 ### errors模块的设计实现
 
 综合上述方式考虑，我们建议采用方法二，在此基础上进行模块化设计，设计如下所示：
 
-![errors&#x6A21;&#x5757;&#x8BBE;&#x8BA1;](../../.gitbook/assets/image%20%282%29.png)
+![errors模块设计](<../../.gitbook/assets/image (35).png>)
 
 设计实现errors的时候，还应该考虑到这里的框架errors是否需要导出，哪些应该导出，各个错误对应的错误码、错误描述、类型要统一整理好。
 
@@ -31,7 +31,7 @@
 
 为了方便业务开发者查询、比较error，最好能将error统一整理，框架、业务代码中都建议这样做：
 
-```text
+```
 var (
     errXXX = newError(1000, ".........", ErrorTypeFramework)
     errYYY = newError(1001, ".........", ErrorTypBusiness
@@ -65,4 +65,3 @@ var (
 ### 总结
 
 我们简单介绍了设计errors模块的初衷和设计理念，errors模块在框架代码、业务代码中会被广泛使用，在后续模块的设计实现中，我们会再介绍errors的使用。
-

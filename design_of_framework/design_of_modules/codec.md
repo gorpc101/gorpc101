@@ -8,7 +8,7 @@
 
 为了说清楚这个过程，我们不妨举个例子来说明下这里的逻辑。这里将使用google protocolbuffers（以下简称pb或protobuf）作为IDL（Interface Definition Language）来说明我们的服务接口，如果读者对pb的使用还有些陌生的话，可以参考[pb的官方文档](https://developers.google.com/protocol-buffers)。
 
-```text
+```
 syntax = "proto3";
 package helloworld;
 
@@ -45,7 +45,7 @@ service HelloService {
 * 消息自描述：pb是自描述性很强的消息格式，用来描述服务接口以及接口请求、响应参数非常合适；
 * 成熟工具链：pb提供了专门的protoc编译器，用以解析pb并将其转换为编程语言对应的桩代码，而且提供了插件机制允许为定制化代码生成插件，如protoc-gen-go；
 * 极佳的效率：在序列化、反序列化操作方面，pb有着极高的操作效率；
-* 合适的压缩率：由于采用了合理的编码技术，如varint、zigzag等对小整数、负整数进行了更短的编码；对string采用了utf8编码，每个字符1~4个字节，也是变长编码；其他的就不深究了；
+* 合适的压缩率：由于采用了合理的编码技术，如varint、zigzag等对小整数、负整数进行了更短的编码；对string采用了utf8编码，每个字符1\~4个字节，也是变长编码；其他的就不深究了；
 * 协议可扩展：后续做协议调整时，如请求体里面增加一个新参数，只要保持字段的tag number保持递增，就不会引发协议不兼容问题，双方协议升级后即可正常访问新增字段；
 
 pb现在也是很多微服务框架首选的数据交换格式，如google出品的gRPC自不必多说了，micro、百度brpc、字节kitex、腾讯goneat、trpc也是做了相同选择。
@@ -97,31 +97,15 @@ RPC通信中常用的压缩/解压缩算法包括：
 
 理解了上述内容之后，我们继续来看下codec模块的设计，如下图所示：
 
-![codec&#x6A21;&#x5757;&#x8BBE;&#x8BA1;](../../.gitbook/assets/image%20%283%29.png)
+![codec模块设计](<../../.gitbook/assets/image (36).png>)
 
 从上图不难看出，其包括核心接口Codec、Compressor、Serializer、Session、SessionBuilder，以及将其整合在一起的MessageReader，我们详细解释这么设计的原因及工作过程。
-
-* Codec，负责应用层协议的编解码逻辑，如果应用层协议的请求头、响应头不统一的话，那就要为client、server分别定制一个编解码逻辑。client端针对请求头做编码逻辑，对响应头做解码逻辑；server端则是针对响应头做编码逻辑，对请求头做解码逻辑；
-* Compressor，以gzip算法为例，压缩、解压缩逻辑一定是匹配的，和编解码逻辑不一样，压缩、解压缩针对的是\[\]byte，而非proto.Message，所以这个在client、server端都是同一套代码；
-* Serializer，以pb序列化方式为例，PBSerializer目的是将proto.Message序列化为\[\]byte，以方便后续在网络中传输。其逆操作则是将\[\]byte反序列化为proto.Message；
-* Session，通常理解为会话，会话其实也可以在client、server端存储，只不过JavaEE相关的实践让更多人理解为server端才有会话概念，这种理解其实是不准确的。对于RPC通信而言，client、server端都有一些会话信息需要存储，所以我们这里使用Session的概念也是比较合适的。也有些框架使用RPCContext或者Msg来表示类似概念；
-* SessionBuilder，负责实例化Session，Session只是最基础的抽象，我们还需要针对unary rpc、streaming rpc做些更具体的特化，这就是UnaryRPCSession、StreamRPCSession，对应地SessionBuilder也需要做特化，这就是UnaryRPCSessionBuilder、StreamRPCSessionBuilder；
-* MessageReader，就是codec中核心中的核心了，它负责将上述各个部分整合在一起，完成完整的消息读取的功能。以tcpserver为例，我们为每个入连接分配一个MessageReader，它负责从连接上读取数据并通过codec进行Decode逻辑，成功后则继续通过compressor进行Decompress，然后再进行反序列化操作，这样就拿到了客户端发送来的请求。有了这个请求之后就可以构建session，对于unary rpc的话，收一个请求构建一个session就可以。对于流式请求的话，则需要根据请求的某些流操作标识来决定是否创建新的流，进而决定是否创建新的session。
-
-ps：可能有人会考虑，关于MessageReader，也可以针对unary rpc和streaming rpc进行MessgeReader的特化，但是这样设计可能不一定是正确的。比如可能client通过一个tcpconn通信，执行RPC1时是unary rpc，但是执行RPC2时是streaming rpc。那我们这个连接的MessageReader应该怎么管理呢？相比之下我们前面提及的方案会更好些。
-
-这大致就是codec模块的大致整体设计了，后续读者可以查看源码具体实现，进一步理解。
-
-### 总结
-
-本节介绍了codec模块的整体设计，包括编解码逻辑、序列化/反序列化逻辑、压缩/解压缩逻辑、应用层协议的设计、rpc的会话管理，希望能加深读者对这方面的认识，慢慢地开始进入gorpc框架的核心了。
 
 ### 参考内容
 
 1. google protocolbuffers, [https://developers.google.com/protocol-buffers](https://developers.google.com/protocol-buffers)
-2. comparison of data serialization formats, [https://en.wikipedia.org/wiki/Comparison\_of\_data-serialization\_formats](https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats)
+2. comparison of data serialization formats, [https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats](https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats)
 3. Cap'n Proto, FlatBuffers, and SBE, [https://capnproto.org/news/2014-06-17-capnproto-flatbuffers-sbe.html](https://capnproto.org/news/2014-06-17-capnproto-flatbuffers-sbe.html)
-4. gRPC compression, [https://grpc.github.io/grpc/core/md\_doc\_compression.html](https://grpc.github.io/grpc/core/md_doc_compression.html)
+4. gRPC compression, [https://grpc.github.io/grpc/core/md_doc_compression.html](https://grpc.github.io/grpc/core/md_doc_compression.html)
 5. RPC compression, [https://github.com/scylladb/seastar/blob/master/doc/rpc-compression.md](https://github.com/scylladb/seastar/blob/master/doc/rpc-compression.md)
-6. snappy compression, [https://en.wikipedia.org/wiki/Snappy\_\(compression\)](https://en.wikipedia.org/wiki/Snappy_%28compression%29)
-
+6. snappy compression, [https://en.wikipedia.org/wiki/Snappy\_(compression)](https://en.wikipedia.org/wiki/Snappy_\(compression\))

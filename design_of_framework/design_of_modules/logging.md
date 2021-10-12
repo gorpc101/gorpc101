@@ -4,7 +4,7 @@
 
 该模块的详细设计如下，主要包括Logger、Writer两个接口定义，以及日志级别类型Level、日志文件滚动类型RollType。
 
-![log&#x6A21;&#x5757;&#x8BBE;&#x8BA1;](../../.gitbook/assets/image%20%2839%29.png)
+![log模块设计](<../../.gitbook/assets/image (34).png>)
 
 结合上图，我们一起来看一下log模块的设计，以及这么设计的原因。
 
@@ -15,8 +15,6 @@
 * options/Option，选项是用来控制Logger的行为的，如日志最低输出级别、日志文件滚动类型等等；
 
 我们提供了一个默认的logger实现，它实现了接口Logger、Writer，但是需要在初始化的时候指定Writer类型。结合大家使用日志的习惯，为了初始化的便利性，我们可以将logger的默认writer使用FileWriter，也允许通过选项WithWriter来覆盖。
-
-
 
 
 

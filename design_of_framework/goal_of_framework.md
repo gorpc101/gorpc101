@@ -9,18 +9,18 @@
 我们进行框架选型时，脑海中其实列了一个checklist，对现有框架进行层层检查，最后整理出一个表格，可以看到A框架满足那些条目，B框架满足哪些条目，C框架又满足哪些条目，等等。这是对比选择同类产品时所常用的一种方法，如以Spring Boot、Go Micro、BRpc为例：
 
 | concerns \ framework | Spring Boot | Go Micro | BRpc | GRPC |
-| :--- | :--- | :--- | :--- | :--- |
-| multi languages | N | N | N | Y |
-| unary rpc | Y | Y | Y | Y |
-| stream rpc | Y | Y | Y | Y |
-| naming service | Y | Y | Y | Y |
-| logging | Y | Y | Y | Y |
-| tracing | Y | Y | Y | Y |
-| ... | ... | ... | ... | ... |
-| tcp transport | Y | Y | Y | N |
-| udp transport | Y | Y | Y | N |
-| http/2 transport | Y | Y | Y | Y |
-| grpc integration | Y | Y | Y | - |
+| -------------------- | ----------- | -------- | ---- | ---- |
+| multi languages      | N           | N        | N    | Y    |
+| unary rpc            | Y           | Y        | Y    | Y    |
+| stream rpc           | Y           | Y        | Y    | Y    |
+| naming service       | Y           | Y        | Y    | Y    |
+| logging              | Y           | Y        | Y    | Y    |
+| tracing              | Y           | Y        | Y    | Y    |
+| ...                  | ...         | ...      | ...  | ...  |
+| tcp transport        | Y           | Y        | Y    | N    |
+| udp transport        | Y           | Y        | Y    | N    |
+| http/2 transport     | Y           | Y        | Y    | Y    |
+| grpc integration     | Y           | Y        | Y    | -    |
 
 其实，这里的框架选型时的checklist也未尝不是我们的一个设计目标，它也是设计目标中的一部分。
 
@@ -49,7 +49,7 @@ gorpc101系列，是以系统性介绍一个微服务框架的研发为目的，
 * 易使用：基于框架开发微服务时应该很简单、省时省力省心；
 * go开发：使用go语言开发该微服务框架，主要面向go后端开发者；
 
-总结一下，gorpc要遵循 **“小而美”** 的设计，提供灵活的扩展能力以适应不同的研发运营场景，从而让开发人员从琐碎的工作中解脱出来真正地专注于服务质量本身。
+总结一下，gorpc要遵循 **“小而美” **的设计，提供灵活的扩展能力以适应不同的研发运营场景，从而让开发人员从琐碎的工作中解脱出来真正地专注于服务质量本身。
 
 ## 关于重复造轮子的问题
 
@@ -62,6 +62,4 @@ gorpc101系列，是以系统性介绍一个微服务框架的研发为目的，
 而从开发人员角度来说，也希望在后续的开发、联调过程中更加顺畅，对于服务接口的描述也需要一定的规范化。开发过程中也希望能更加关注，协议的定义、代码的生成、测试等等，也需要有工具来支撑。
 
 综上，这个轮子值得造，造的值！下文我们将不再重复讨论这个问题。
-
-
 
