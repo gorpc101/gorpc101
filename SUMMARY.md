@@ -112,7 +112,13 @@
 
 ***
 
-[致谢](thanks.md)
+## 致谢
+
+[感谢家人](thanks/families.md)
+
+[感谢团队](thanks/teams.md)
+
+[感谢领导](thanks/leaders.md)
 
 ## 附录
 
