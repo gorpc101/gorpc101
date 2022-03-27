@@ -111,7 +111,11 @@
 
 ---
 
-* [致谢](thanks/README.md)
+## 本书最后
+
+* [致谢](thanks.md)
+* [阅读更多](readmore.md)
+* [版权声明](copyright.md)
 
 ## 附录
 
