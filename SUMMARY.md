@@ -2,8 +2,8 @@
 
 - [作者简介](Author.md)
 
-* [关于本书](README.md)
-* [前言](preface.md)
+* [本书简介](README.md)
+* [本书前言](preface.md)
 
 ## 服务架构演变
 
