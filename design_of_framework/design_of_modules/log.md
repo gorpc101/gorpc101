@@ -4,7 +4,7 @@
 
 该模块的详细设计如下，主要包括Logger、Writer两个接口定义，以及日志级别类型Level、日志文件滚动类型RollType。
 
-![log&#x6A21;&#x5757;&#x8BBE;&#x8BA1;](../../.gitbook/assets/image%20%2839%29.png)
+![log模块设计](../../.gitbook/assets/gorpc-logging.png)
 
 结合上图，我们一起来看一下log模块的设计，以及这么设计的原因。
 

@@ -4,7 +4,7 @@
 
 该模块的详细设计如下图所示，其中主要包括Loader、Provider、Watcher、Decoder、Config的接口设计及实现。
 
-![config模块设计](<../../.gitbook/assets/image (30).png>)
+![config模块设计](<../../.gitbook/assets/gorpc-config.png>)
 
 结合上图我们简单解释下各枚举类型、接口类型、实现类的作用，以及为什么这么设计。\
 

@@ -23,7 +23,7 @@
 
 综合上述方式考虑，我们建议采用方法二，在此基础上进行模块化设计，设计如下所示：
 
-![errors模块设计](<../../.gitbook/assets/image (35).png>)
+![errors模块设计](<../../.gitbook/assets/gorpc-errors.png>)
 
 设计实现errors的时候，还应该考虑到这里的框架errors是否需要导出，哪些应该导出，各个错误对应的错误码、错误描述、类型要统一整理好。
 

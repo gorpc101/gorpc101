@@ -97,7 +97,7 @@ RPC通信中常用的压缩/解压缩算法包括：
 
 理解了上述内容之后，我们继续来看下codec模块的设计，如下图所示：
 
-![codec模块设计](<../../.gitbook/assets/image (36).png>)
+![codec模块设计](<../../.gitbook/assets/gorpc-codec.png>)
 
 从上图不难看出，其包括核心接口Codec、Compressor、Serializer、Session、SessionBuilder，以及将其整合在一起的MessageReader，我们详细解释这么设计的原因及工作过程。
 
