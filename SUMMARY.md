@@ -1,7 +1,6 @@
 # Table of contents
 
-- [作者简介](Author.md)
-
+* [作者简介](Author.md)
 * [本书简介](README.md)
 * [本书前言](preface.md)
 
@@ -110,9 +109,9 @@
 * [培养新贡献者](8-cooperation/newbies.md)
 * [有理有据说不](8-cooperation/sayno.md)
 
-***
+---
 
-## [致谢](thanks/README.md)
+* [致谢](thanks/README.md)
 
 ## 附录
 
