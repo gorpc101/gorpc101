@@ -1,20 +1,22 @@
 # Table of contents
 
-* [作者](README.md)
+- [作者简介](Author.md)
+
+* [关于本书](README.md)
 * [前言](preface.md)
 
-## 服务架构演变 <a href="#architectures" id="architectures"></a>
+## 服务架构演变
 
 * [软件服务架构演变](architectures/evolution_of_architectures.md)
 * [微服务架构优势及挑战](architectures/pros_and_cons.md)
 
-## 微服务框架调研 <a href="#microservice_frameworks" id="microservice_frameworks"></a>
+## 微服务框架调研
 
 * [框架该如何选型](microservice_frameworks/kuang-jia-gai-ru-he-xuan-xing.md)
 * [流行微服务框架](microservice_frameworks/widely_used_frameworks.md)
 * [自研微服务框架](microservice_frameworks/why_develop_another_one.md)
 
-## 微服务框架设计 <a href="#design_of_framework" id="design_of_framework"></a>
+## 微服务框架设计
 
 * [设计目标](design_of_framework/goal_of_framework.md)
 * [设计方法](design_of_framework/method-of-design.md)
@@ -41,7 +43,7 @@
   * [metrics](design_of_framework/devel/metrics.md)
   * [pool](design_of_framework/devel/pool.md)
 
-## 框架研发质量 <a href="#quality_of_framework" id="quality_of_framework"></a>
+## 框架研发质量
 
 * [交付前必验证](quality_of_framework/testing/README.md)
   * [单元测试](quality_of_framework/testing/unit_test.md)
@@ -52,7 +54,7 @@
 * [科学版本管理](quality_of_framework/version.md)
 * [珍视用户反馈](quality_of_framework/feedback.md)
 
-## 框架生态建设 <a href="#ecosystem" id="ecosystem"></a>
+## 框架生态建设
 
 * [完善框架文档](ecosystem/documentation.md)
 * [代码生成工具](ecosystem/generator.md)
@@ -61,7 +63,7 @@
 * [引领最佳实践](ecosystem/practices.md)
 * [保持社区活跃](ecosystem/community.md)
 
-## 开源协作管理 <a href="#opensource_and_cooperation" id="opensource_and_cooperation"></a>
+## 开源协作管理
 
 * [项目贡献方式](opensource_and_cooperation/contribution.md)
 * [规划及里程碑](opensource_and_cooperation/milestone.md)
@@ -75,6 +77,6 @@
 
 * [致谢](thanks.md)
 
-## 附录 <a href="#appendix" id="appendix"></a>
+## 附录
 
 * [参考文献](appendix/references.md)
